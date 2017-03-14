@@ -27,7 +27,8 @@ height = 23
 ;radius = 6.0
 fixed-center = true
 
-background = ${colors.background}
+;background = ${colors.background}
+background = #5a000000
 foreground = ${colors.foreground}
 
 line-size = 3
@@ -111,16 +112,16 @@ label-active-foreground = ${colors.fg}
 label-active-padding = 3
 
 label-occupied = %name%
-label-occpuied-padding = 3
+label-occupied-padding = 3
 
 label-empty = %name%
 label-empty-padding = 1
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-background = ${module/bspwm.label-focused-background}
-;label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-underline = 
-label-focused-padding = ${module/bspwm.label-focused-padding}
+label-focused-background = #88000000
+;label-focused-underline= #ddd
+label-focused-underline= #80ff80
+label-focused-padding = 2 
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
@@ -138,18 +139,18 @@ label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+;[module/mpd]
+;type = internal/mpd
+;format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+;icon-prev = 
+;icon-stop = 
+;icon-play = 
+;icon-pause = 
+;icon-next = 
 
-label-song-maxlen = 25
-label-song-ellipsis = true
+;label-song-maxlen = 25
+;label-song-ellipsis = true
 
 [module/xbacklight]
 type = internal/xbacklight
