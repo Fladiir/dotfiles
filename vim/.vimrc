@@ -7,7 +7,7 @@ set laststatus=2
 set showtabline=2
 " ++++++++ Lightline configuration ++++++++
 let g:lightline = {
-	\ 'colorscheme': 'wombat',
+	\ 'colorscheme': 'Tomorrow_Night',
 	\ 'separator': { 'left': '', 'right': '' },
 	\ 'subseparator': { 'left': '', 'right': ''},
 	\ 'tabline': {
