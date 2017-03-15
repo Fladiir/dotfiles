@@ -162,6 +162,10 @@ mode "resize" {
 for_window [class="^.*"] border pixel 0 
 #Forcing firefox on ws2
 assign [class="Firefox"] $ws2
+#Forcing pidgin on ws5
+assign [class="Pidgin"] $ws5
+#Forcing evince in ws8
+assign [class="Evince"] $ws8
 bindsym $mod+r mode "resize"
 gaps inner 5
 gaps outer 1
