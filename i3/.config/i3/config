@@ -93,7 +93,7 @@ bindsym $mod+a focus parent
 #Workspaces variables
 set $ws1 "1: "
 set $ws2 "2: " 
-set $ws3 "3: "
+set $ws3 "3: ♫"
 set $ws4 "4: "
 set $ws5 "5: "
 set $ws6 "6: "
@@ -166,6 +166,8 @@ assign [class="Firefox"] $ws2
 assign [class="Pidgin"] $ws5
 #Forcing evince in ws8
 assign [class="Evince"] $ws8
+#Forcin Thunderbird on ws4
+assign [class="Thunderbird"] $ws4
 bindsym $mod+r mode "resize"
 gaps inner 5
 gaps outer 1
