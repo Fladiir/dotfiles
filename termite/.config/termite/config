@@ -1,5 +1,5 @@
 [options]
-font=Inconsolata Patched 12
+font=Inconsolata Patched 11
 
 [colors]
 
@@ -8,37 +8,57 @@ foreground      = #c0b18b
 foreground_bold = #c0b18b
 cursor          = #c0b18b
 #background      = #1f1f1f
-background = rgba(0,0,0,0.8)
+background = rgba(0,0,0,0.9)
 
 # black
-color0  = #4a3637
-color8  = #4a3637
+#color0  = #4a3637
+#color8  = #4a3637
+color0  = #000
+color8  = #555555
+
 
 # red
-color1  = #d17b49
-color9  = #d17b49
+#color1  = #d17b49
+#color9  = #d17b49
+color1  = #fb4245
+color9  = #fb4245
+
 
 # green
-color2  = #7b8748
-color10 = #7b8748
+#color2  = #7b8748
+#color10 = #7b8748
+color2 = #50fa7b
+color10 = #59fa7b
 
 # yellow
-color3  = #af865a
-color11 = #af865a
+#color3  = #af865a
+#color11 = #af865a
+color3  = #f0fa8b
+color11 = #f0fa8b
+
 
 # blue
-color4  = #535c5c
-color12 = #535c5c
+#color4  = #535c5c
+#color12 = #535c5c
+color4  = #49b9fe
+color12 = #49b9fe
 
 # magenta
-color5  = #775759
-color13 = #775759
+#color5  = #775759
+#color13 = #775759
+color5  = #fb4cb3
+color13 = #fb4cb3
+
 
 # cyan
-color6  = #6d715e
-color14 = #6d715e
+#color6  = #6d715e
+#color14 = #6d715e
+color6  = #8be9fd
+color14 = #8be9fd
+
 
 # white
-color7  = #c0b18b
-color15 = #c0b18b
-
+#color7  = #c0b18b
+#color15 = #c0b18b
+color7 = #ededec
+color15 = #ededec

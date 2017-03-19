@@ -120,7 +120,7 @@ label-empty-padding = 1
 label-focused = %name%
 label-focused-background = #88000000
 ;label-focused-underline= #ddd
-label-focused-underline= #80ff80
+label-focused-underline= #FAC863
 label-focused-padding = 2 
 
 ; unfocused = Inactive workspace on any monitor
