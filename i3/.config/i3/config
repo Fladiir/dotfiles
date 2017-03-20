@@ -158,12 +158,13 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
+bindsym $mod+Shift+b exec i3lock
 for_window [class="^.*"] border pixel 1 
 #Forcing firefox on ws2
 assign [class="Firefox"] $ws2
-#Forcing pidgin in floating mode
+#Forcing pidgin in floating mode on ws3
 for_window [class="Pidgin"] floating enable
+assign [class="Pidgin"] $ws3
 #Forcing evince in ws8
 assign [class="Evince"] $ws8
 #Forcin Thunderbird on ws4
