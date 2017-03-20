@@ -70,7 +70,7 @@ git_prompt_string() {
   [ -n "$git_where" ] && echo "$GIT_PROMPT_SYMBOL$(parse_git_state)$GIT_PROMPT_PREFIX%{$fg[yellow]%}${git_where#(refs/heads/|tags/)}$GIT_PROMPT_SUFFIX"
 }
 # Set the right-hand prompt
-PROMPT="%F{cyan:}[%f"$''"%F{red:}%n@%m%f"$''"%F{cyan:}]┐%f"$'$(git_prompt_string)'$'\n'"%F{cyan:}┌────────────┘%f"$'\n'"%F{cyan:}└─>%f"
+PROMPT="%F{cyan:}┌❬ %f"$''"%F{red:}%n@%m:%f"$'$(git_prompt_string)'$'\n'"%F{cyan:}└──>%f"
 RPROMPT="%F{red:}%~%f"
 #Aliases
 alias ls="ls --color=auto -l"
