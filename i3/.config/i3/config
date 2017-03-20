@@ -165,6 +165,8 @@ assign [class="Firefox"] $ws2
 #Forcing pidgin in floating mode on ws3
 for_window [class="Pidgin"] floating enable
 assign [class="Pidgin"] $ws3
+#Forcing Lxappearance in floating mode on ws3
+for_window [class="Lxappearance"] floating enable
 #Forcing evince in ws8
 assign [class="Evince"] $ws8
 #Forcin Thunderbird on ws4
@@ -172,6 +174,8 @@ assign [class="Thunderbird"] $ws4
 bindsym $mod+r mode "resize"
 gaps inner 5
 gaps outer 1
+focus_follows_mouse no
+
 # Windows colors
 # class                 border  backgr. text    indicator child_border
 client.focused          #FAC863 #285577 #ffffff #2e9ef4   #FAC863
