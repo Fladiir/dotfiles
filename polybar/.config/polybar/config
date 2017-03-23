@@ -52,10 +52,10 @@ modules-left = i3
 modules-center = date 
 modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature powermenu
 
-tray-position = right
-tray-padding = 2
+;tray-position = right
+;tray-padding = 2
 ;tray-transparent = true
-;tray-background = #0063ff
+;tray-background = #5a000000
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -233,18 +233,19 @@ format-disconnected =
 [module/date]
 type = internal/date
 interval = 5
-date = %Y-%m-%d
+date = %a,%b,%Y
 date-alt = %Y-%m-%d
 
 time = %H:%M
 time-alt = %H:%M:%S
 
-format =  <label>
+#format =  <label>
+format = <label>
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #0a6cf5
 
-label = %date% %time%
+label = %date% - %time%
 
 [module/volume]
 type = internal/volume
@@ -290,7 +291,7 @@ format-discharging = <ramp-capacity> <label-discharging>
 ;format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 ;format-full-underline = ${self.format-charging-underline}
-label-discharging = %percentage%% %time%
+label-discharging = %percentage%% 
 label-charging = %percentage%% 
 ; Only applies if <ramp-capacity> is used
 ramp-capacity-0 = 
