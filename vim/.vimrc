@@ -17,7 +17,10 @@ set laststatus=2
 set showtabline=2
 let g:livepreview_previewer = 'evince'
 set number
+" colorscheme
+hi! Comment ctermfg=6
 hi! LineNr ctermfg=172
+hi! vimOption ctermfg=9
 "---------- KEYBINDS ----------
 "map Q :NERDTreeToggle<CR>
 "map <C-left> :NERDTreeFocus<CR>

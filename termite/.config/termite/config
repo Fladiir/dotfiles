@@ -14,12 +14,12 @@ background = rgba(0,0,0,0.9)
 
 
 # black
-color0  = #313737
-color8  = #313737
+color0 = #313737
+color8 = #313737
 
 # red
-color1  = #ff3344
-color9  = #ff5544
+color1 = #ff6677
+color9 = #bb4455
 
 # green
 color2  = #aacc55
@@ -30,21 +30,19 @@ color3  = #ffee55
 color11 = #ffee55
 
 # blue
-color4  = #258bd1
-color12 = #3333bb
+color4  = #44559f
+color12 = #44559f
 
 # magenta
-color6  = #993344
-color14 = #553344
+color5  = #772244
+color13 = #772244
 
 # cyan
-color5  = #0ea39e
-color13 = #0ea39e
+color6  = #338888
+color14 = #338888
 
 # white
-#color7  = #707880
-color7  = #ffffff
-#color15 = #c5c8c6
+color7  = #eeffdd
 color15 = #ffffff
  
 # 256 color space

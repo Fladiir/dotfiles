@@ -4,7 +4,7 @@ promptinit
 bindkey -v
 zstyle ':completion:*' menu select
 setopt COMPLETE_ALIASES
-PROMPT="%F{red}%B%n@%m%b:%f"$''"%F{blue:}%~>%f"
+PROMPT="%F{red}%B%n@%m%b:%f"$''"%F{cyan:}%~>%f"
 #Aliases
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
