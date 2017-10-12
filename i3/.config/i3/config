@@ -175,8 +175,7 @@ focus_follows_mouse no
 
 # Windows colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #FAC863 #285577 #ffffff #2e9ef4   #FAC863
-#client.focused_inactive #FAC863 #5f676a #ffffff #484e50   #FAC863
+client.focused          #44559f #285577 #ffffff #2e9ef4   #bb4455
 client.focused_inactive #000000 #5f676a #ffffff #484e50   #000000
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -187,5 +186,3 @@ client.background       #ffffff
 exec_always polybar i3 
 exec_always feh --bg-fill ~/Pictures/nmswp.png
 exec_always compton
-#exec_always sudo wpa_supplicant -B -Dwext -i wlp1s0 -c /etc/wpa_supplicant/wpa_supplicant-wlp1s0.conf
-#exec_always sudo dhcpcd wlp1s0

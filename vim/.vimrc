@@ -19,7 +19,8 @@ let g:livepreview_previewer = 'evince'
 set number
 " colorscheme
 hi! Comment ctermfg=6
-hi! LineNr ctermfg=172
+"hi! LineNr ctermfg=172
+hi! LineNr ctermfg=6
 hi! vimOption ctermfg=9
 "---------- KEYBINDS ----------
 "map Q :NERDTreeToggle<CR>
