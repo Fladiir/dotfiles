@@ -186,3 +186,4 @@ client.background       #ffffff
 exec_always polybar i3 
 exec_always feh --bg-fill ~/Pictures/nmswp.png
 exec_always compton
+exec_always light-locker

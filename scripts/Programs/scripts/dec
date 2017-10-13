@@ -1,0 +1,8 @@
+#!/bin/bash
+file="/sys/class/backlight/intel_backlight/brightness"
+val=$(cat "$file")
+
+if [ "$val" -gt 100 ];then
+     xbacklight -dec 10 
+
+fi
