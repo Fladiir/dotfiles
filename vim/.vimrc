@@ -9,7 +9,6 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-colorscheme material
 set wildmenu
 "   Statusbar
 set noshowmode
@@ -38,7 +37,7 @@ set shiftwidth=4
 set expandtab
 " ++++++++ Lightline configuration ++++++++
 let g:lightline = {
-			\ 'colorscheme': 'material',
+			\ 'colorscheme': 'combat',
 			\ 'separator': { 'left': '', 'right': '' },
 			\ 'subseparator': { 'left': '', 'right': ''},
 			\ 'tabline': {
