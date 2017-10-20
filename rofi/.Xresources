@@ -2,10 +2,10 @@
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: #273238, #772244, #772244
-rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
+rofi.color-window: #273238, #bb4455, #bb4455
+rofi.color-normal: #273238, #c1c1c1, #273238, #bb4455, #ffffff
 rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
 rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
 ! "Separator style (none, dash, solid)" Set from: File
 rofi.separator-style:                solid
-rofi.hide-scrollbar:                 true 
+rofi.hide-scrollbar:                 false

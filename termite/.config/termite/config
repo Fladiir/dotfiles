@@ -18,7 +18,7 @@ color0 = #000000
 color8 = #313737
 
 # red
-color1 = #ff6677
+color1 = #bb4455
 color9 = #bb4455
 
 # green
@@ -39,8 +39,6 @@ color13 = #772244
 
 # cyan
 color6  = #338888
-color14 = #338888
-
 # white
 color7  = #eeffdd
 color15 = #ffffff
