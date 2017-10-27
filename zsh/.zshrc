@@ -18,6 +18,7 @@ bindkey "^[[3~" delete-char
 
 
 export PATH=$HOME/Programs/firefox:$PATH:/usr/local/bin/
+export PATH=$HOME/Programs/n30f:$PATH:/usr/local/bin
 export EDITOR=vim
 
 as(){
