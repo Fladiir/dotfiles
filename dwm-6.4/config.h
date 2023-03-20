@@ -9,7 +9,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh						= 12;
 static const int horizpadbar				= 0;
 static const int vertpadbar					= 0;
-static const char *fonts[]          = { "DejaVuSansMono Nerd Font:size=10" };
+static const char *fonts[]          = { "Ubuntu Nerd Font:bold:pixelsize=12:antialias=true:autohint=true" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
