@@ -13,14 +13,13 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
-
+local helpers = require("helpers")
 -- SELECTED THEME
 currtheme = "first"
-
 -- KEYBINDS
 local keybinds = require("themes/" .. currtheme .. "/keys")
 
-
+local animation = require("modules.animation")
 -- TITLEBARS
 require("themes/" .. currtheme .. "/titlebar")
 
@@ -53,6 +52,14 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("~/.config/awesome/themes/" .. currtheme .. "/theme.lua")
 
+local function new(self, ...)
+  local instance = setmetatable({}, { __index = self })
+  return instance:init(...) or instance end
+
+function class(base)
+    return setmetatable({new = new}, { __call = new, __index = base})
+end
+
 -- This is used later as the default terminal and editor to run.
 terminal = "st"
 browser = "firefox"
@@ -63,8 +70,8 @@ editor_cmd = terminal .. " -e " .. editor
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
-    awful.layout.suit.floating,
-    awful.layout.suit.max,
+    -- awful.layout.suit.floating,
+    -- awful.layout.suit.max,
     -- awful.layout.suit.tile.left,
     -- awful.layout.suit.tile.bottom,
     -- awful.layout.suit.tile.top,
@@ -104,12 +111,6 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
 
--- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
-
--- {{{ Wibar
--- Create a textclock widget
-mytextclock = wibox.widget.textclock()
 
 -- Create a wibox for each screen and add it
 
@@ -129,120 +130,25 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
+
     -- Wallpaper
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag(beautiful.tagnames, s, awful.layout.layouts[1])
 
-    -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt()
-    -- Create an imagebox widget which will contain an icon indicating which layout we're using.
-    -- We need one layoutbox per screen.
-    s.mylayoutbox = awful.widget.layoutbox(s)
-    s.mylayoutbox:buttons(gears.table.join(
-                           awful.button({ }, 1, function () awful.layout.inc( 1) end),
-                           awful.button({ }, 3, function () awful.layout.inc(-1) end),
-                           awful.button({ }, 4, function () awful.layout.inc( 1) end),
-                           awful.button({ }, 5, function () awful.layout.inc(-1) end)))
-    -- Create a taglist widget
-    s.mytaglist = awful.widget.taglist {
-        screen  = s,
-        filter  = awful.widget.taglist.filter.all,
-        buttons = keybinds.taglist_buttons
-    }
-
-
-    -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
-
-    -- Add widgets to the wibox
-    s.mywibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            mylauncher,
-            s.mytaglist,
-            s.mypromptbox,
-        },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
-            wibox.widget.systray(),
-            mytextclock,
-            s.mylayoutbox,
-        },
-    }
+    -- Status Bar
+    require("themes." .. currtheme .. ".bars.bars")(s)
 end)
--- }}}
 
--- {{{ Rules
--- Rules to apply to new clients (through the "manage" signal).
-awful.rules.rules = {
-    -- All clients will match this rule.
-    { rule = { },
-      properties = { border_width = beautiful.border_width,
-                     border_color = beautiful.border_normal,
-                     focus = awful.client.focus.filter,
-                     raise = true,
-                     keys = keybinds.clientkeys,
-                     buttons = keybinds.clientbuttons,
-                     screen = awful.screen.preferred,
-                     placement = awful.placement.no_overlap+awful.placement.no_offscreen
-     }
-    },
-
-    -- Floating clients.
-    { rule_any = {
-        instance = {
-          "DTA",  -- Firefox addon DownThemAll.
-          "copyq",  -- Includes session name in class.
-          "pinentry",
-        },
-        class = {
-          "Arandr",
-          "Blueman-manager",
-          "Gpick",
-          "Kruler",
-          "MessageWin",  -- kalarm.
-          "Sxiv",
-          "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-          "Wpa_gui",
-          "veromix",
-          "xtightvncviewer"},
-
-        -- Note that the name property shown in xprop might be set slightly after creation of the client
-        -- and the name shown there might not match defined rules here.
-        name = {
-          "Event Tester",  -- xev.
-        },
-        role = {
-          "AlarmWindow",  -- Thunderbird's calendar.
-          "ConfigManager",  -- Thunderbird's about:config.
-          "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
-        }
-      }, properties = { floating = true }},
-
-    -- Add titlebars to normal clients and dialogs
-    { rule_any = {type = { "normal" , "dialog" }
-      }, properties = { titlebars_enabled = true }
-    },
-
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    { rule = { class = "Firefox" },
-       properties = { screen = 1, tag = "2", floating = true } },
-    { rule = { class = "Discord" },
-       properties = { screen = 1, tag = "3" } },
-}
--- }}}
+require("themes." .. currtheme .. ".rules")
 
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
     -- Set the windows at the slave,
     -- i.e. put it at the end of others instead of setting it master.
-    -- if not awesome.startup then awful.client.setslave(c) end
+    if not awesome.startup then awful.client.setslave(c) end
 
     if awesome.startup
       and not c.size_hints.user_position
@@ -260,3 +166,53 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+--[[
+local wibox_wid = wibox.widget({
+		markup = 'This <i>is</i> a <b>textbox</b>!!!',
+    align  = 'center',
+    valign = 'center',
+		visible = true,
+    widget = wibox.widget.textbox	
+})
+
+local wibox_test = wibox({
+  	visible = true,
+		ontop = true,
+  	x = 50,
+  	y = 450,
+  	width = 100,
+  	height = 100,
+  	bg = "#00fff0",
+		wibox = wibox_wid
+})
+
+
+local anim = animation:new({
+    pos = {
+        neww = 100,
+        newc = helpers.hex_to_rgb("#00ff00")
+    },
+    easing = animation.easing.linear,
+    duration = 0.2,
+    update = function(self, pos)
+        wibox_test.width = pos.neww
+        wibox_test.bg = helpers.rgb_to_hex(pos.newc)
+    end
+
+})
+
+wibox_test:connect_signal("mouse::enter", function(item, _)
+    local args = {}
+    args.neww = 300
+    args.newc = helpers.hex_to_rgb("#ff0000")
+    anim:set(args)
+end)
+
+
+wibox_test:connect_signal("mouse::leave", function(item, _)
+    local args = {}
+    args.neww = 100
+    args.newc = helpers.hex_to_rgb("#00ff00")
+    anim:set(args)
+end)
+--]]

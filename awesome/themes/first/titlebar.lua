@@ -30,11 +30,12 @@ client.connect_signal("request::titlebars", function(c)
 
 
     awful.titlebar(c, {
-	size		= 20,
+	size				= 20,
 	bg_normal 	= '#080c10',
-	bg_focus 	= '#080c10',
+	bg_focus 		= '#080c10',
 	fg_normal 	= '#ffffff',
-	fg_focus 	= '#ffffff',
+	fg_focus 		= '#ffffff',
+	font 				= beautiful.titlebar_font,
 
     }) : setup {
         { -- Left
