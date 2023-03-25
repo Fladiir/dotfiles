@@ -8,6 +8,7 @@ Plug 'tpope/vim-surround'
 Plug 'dense-analysis/ale'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 call plug#end()
 
 set termguicolors     " enable true colors support
@@ -15,7 +16,8 @@ set encoding=utf-8
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
 let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+"colorscheme ayu
+colorscheme catppuccin-mocha
 
 set number
 "set mousemodel=extend
@@ -25,11 +27,20 @@ set tabstop=2
 set shiftwidth=2
 set noshowmode
 set termguicolors
+set cul
+set relativenumber
 
+hi CursorLine ctermbg=none guibg=none
+hi link @variable Normal
+hi @property guifg=#f07178
+hi link @parameter Normal
+hi @parameter gui=none
+hi! link @type.builtin Type
+
+	"\ 'separator': { 'left': '', 'right': '' },
+	"\ 'subseparator': { 'left': '', 'right': ''},
 let g:lightline = {
-	\ 'colorscheme': 'one',
-	\ 'separator': { 'left': '', 'right': '' },
-	\ 'subseparator': { 'left': '', 'right': ''},
+	\ 'colorscheme': 'catppuccin',
 	\ 'active': {
 	\   'left': [ 
 	\			[ 'mode', 'paste'],
@@ -62,7 +73,7 @@ endfunction
 
 let g:ale_linters = {'gcc' : ['gcc']}
 let g:ale_linters_explicit = 1
-let g:gutentags_project_root = ['*.ioc', '.git', 'Makefile' ]
+let g:gutentags_project_root = ['*.ioc', '.git', 'Makefile', "CMakeLists.txt" ]
 set complete=.,b,w,u,d,t,i
 filetype plugin on
 set omnifunc=ale#completion#OmniFunc
@@ -76,9 +87,9 @@ map <C-down> 	<C-w>j
 map <C-S> :vs<CR>
 map <C-H> :sp<CR>
 
-hi link @variable Normal
-hi @property guifg=#f07178
-hi link @parameter Normal
+
+
+
 
 autocmd BufRead *.conf set ft=conf
 

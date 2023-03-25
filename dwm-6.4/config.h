@@ -18,9 +18,13 @@ static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 static const char col_black[]				= "#000000";
 static const char col_gray_dark[]		= "#121111";
-static const char col_red[]					= "#ff0000";
+static const char col_red[]					= "#f38ba8";
 static const char col_yellow[]			= "#ffff00";
 static const char col_white[]				= "#ffffff";
+static const char blueterm[]				= "#0d1017";
+static const char peach[]						= "#FAB387";
+static const char maroon[]					= "#EBA0AC";
+static const char sapphire[]				= "#74C7EC";
 
 static const unsigned int ulinepad	= 0;	/* horizontal padding between the underline and tag */
 static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
@@ -29,9 +33,9 @@ static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just 
 
 static const char *colors[][3]      = {
 	/*               		fg         		bg         			border   */
-	[SchemeNorm] 		= { col_gray3, 		col_gray_dark,	col_gray2 		},
-	[SchemeSel]  		= { col_cyan, 		col_gray_dark,  col_cyan  		},
-	[SchemeTitle]  	= { col_gray4, 		col_gray_dark,	col_cyan  		},
+	[SchemeNorm] 		= { col_gray3, 		blueterm,	col_gray2 		},
+	[SchemeSel]  		= { col_red, 		  blueterm,  col_cyan  		},
+	[SchemeTitle]  	= { col_gray4, 		blueterm,				col_cyan  		},
 	[SchemeWarn]  	= { col_black, 		col_yellow,  		col_red  			},
 	[SchemeUrgent]  = { col_white, 		col_red,  			col_red  			},
 };
