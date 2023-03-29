@@ -9,7 +9,8 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh						= 12;
 static const int horizpadbar				= 0;
 static const int vertpadbar					= 0;
-static const char *fonts[]          = { "Ubuntu Nerd Font:bold:pixelsize=12:antialias=true:autohint=true" };
+//static const char *fonts[]          = { "Ubuntu Nerd Font:bold:pixelsize=12:antialis=true:autohint=true" };
+static const char *fonts[]          = { "Ubuntu Nerd Font:bold:pixelsize=14:antialis=true:autohint=true" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -33,8 +34,8 @@ static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just 
 
 static const char *colors[][3]      = {
 	/*               		fg         		bg         			border   */
-	[SchemeNorm] 		= { col_gray3, 		blueterm,	col_gray2 		},
-	[SchemeSel]  		= { col_red, 		  blueterm,  col_cyan  		},
+	[SchemeNorm] 		= { col_gray3, 		blueterm,				col_gray2			},
+	[SchemeSel]  		= { col_red, 		  blueterm,  			col_cyan			},
 	[SchemeTitle]  	= { col_gray4, 		blueterm,				col_cyan  		},
 	[SchemeWarn]  	= { col_black, 		col_yellow,  		col_red  			},
 	[SchemeUrgent]  = { col_white, 		col_red,  			col_red  			},
