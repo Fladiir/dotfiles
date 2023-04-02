@@ -1,5 +1,4 @@
 #! /bin/bash
-
 ETH_IF=eth0
 
 IFS_DIR="/sys/class/net/$ETH_IF"
@@ -14,7 +13,7 @@ else
 fi
 
 while true; do
-	xsetroot -name "$(echo -e "\x03$(date +'%d %b %Y %k:%M')    $CONN_ICON")"
+	xsetroot -name "$(echo -e "\x06\x03$(date +'%d %b %Y %k:%M')   $CONN_ICON")"
 	sleep 2
 done
 
