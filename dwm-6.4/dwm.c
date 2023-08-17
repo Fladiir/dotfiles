@@ -761,7 +761,7 @@ drawbar(Monitor *m)
 			}
 		}
 
-		sw += TEXTW(ts) - lrpad;
+		sw += TEXTW(ts) - lrpad + 2;
 
 		for (ts = stext; *ts; ts++) {
 			/* If control character, partial draw */

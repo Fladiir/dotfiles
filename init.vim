@@ -28,7 +28,7 @@ set shiftwidth=2
 set noshowmode
 set termguicolors
 set cul
-set relativenumber
+" set relativenumber
 
 hi CursorLine ctermbg=none guibg=none
 hi link @variable Normal
