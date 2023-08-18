@@ -21,7 +21,6 @@ compinit
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 alias ls="ls --color=auto"
-alias ll="ls -al --color=auto"
 PS1='%B%F{6}[%F{1}%n %B%F{11}%1~%B%F{6}]%# %F{7}'
 
 # X Autostart
@@ -29,3 +28,4 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 	exec startx
 fi
 
+PATH=$PATH:~/dev/eww/target/release

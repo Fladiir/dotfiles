@@ -14,7 +14,7 @@ else
 fi
 
 while true; do
-	xsetroot -name "$(echo -e "\x03$(date +'%d %b %Y %k:%M')    $CONN_ICON")"
+	xsetroot -name "$(echo -e "$(date +'%d %b %Y %k:%M')    $CONN_ICON")"
 	sleep 2
 done
 
