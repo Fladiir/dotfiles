@@ -31,33 +31,28 @@ theme.fg_minimize   = "#ffffff"
 theme.useless_gap   = dpi(5)
 theme.border_width  = dpi(0)
 theme.border_normal = "#000000"
--- theme.border_focus  = "#535d6c"
-theme.border_focus  = "#000000"
-theme.border_marked = "#91231c"
 
 theme.wibar_size = dpi(32)
+theme.wibar_bot_padding = dpi(5)
+theme.wibar_top_padding = dpi(5)
 theme.bar_bg = "#0b0c10"
 theme.bar_fg = "#ffffff"
-theme.bg_systray = theme.bar_bg 
-theme.systray_hide_icon_hidden = ""
-theme.systray_hide_icon = ""
-theme.systray_hide_icon_fg = "#ffffff"
-theme.systray_hide_sep_color = theme.bar_bg
-theme.hoverbg = "#dddddd"
+theme.hoverbg = "#1f222e"
 
 theme.tagnames = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }
-theme.taglist_text_focused = {" "," "," "," "," "," "," "," "," "," "}
-theme.taglist_text_urgent = {" "," "," "," "," "," "," "," "," "," "}
-theme.taglist_text_occupied = {" "," "," "," "," "," "," "," "," "," "}
-theme.taglist_text_empty = {" "," "," "," "," "," "," "," "," "," "}
 
 theme.taglist_occupied_color = "#dddddd"
 theme.taglist_focused_color = "#ee2244"
 theme.taglist_urgent_color = "#00ff00"
-theme.taglist_empty_color = "#7e7f80"
+theme.taglist_empty_color = "#34384c"
 
 theme.taglist_occupied_fontsize = 14
 theme.taglist_empty_fontsize = 10
+
+theme.taglist_tag_height 			= dpi(8)
+theme.taglist_empty_width 		= dpi(8)
+theme.taglist_occupied_width 	= dpi(16)
+theme.taglist_selected_width 	= dpi(32)
 
 theme.menu_submenu_icon = themes_path.."default/submenu.png"
 theme.menu_height = dpi(15)

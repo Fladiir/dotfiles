@@ -1,6 +1,6 @@
 
 local naughty = require("naughty")
-
+local gshape = require("gears.shape")
 local helpers = {}
 
 local function round(x, p)
@@ -38,4 +38,15 @@ function helpers.rgb_to_hex(color)
 	return "#" .. string.format("%02x%02x%02x%02x", math.floor(r), math.floor(g), math.floor(b), math.floor(a))
 end
 
+function helpers.rrect(radius)
+	return function(cr, width, height)
+		gshape.rounded_rect(cr, width, height, radius)
+	end
+end
+
+function helpers.rbar(width, height)
+	return function(cr, width, height)
+		gshape.rounded_bar(cr, width, height)
+	end
+end
 return helpers

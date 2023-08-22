@@ -17,11 +17,9 @@ local helpers = require("helpers")
 -- SELECTED THEME
 currtheme = "first"
 -- KEYBINDS
-local keybinds = require("themes/" .. currtheme .. "/keys")
+local keybinds = require("keys")
 
 local animation = require("modules.animation")
--- TITLEBARS
-require("themes/" .. currtheme .. "/titlebar")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -141,7 +139,7 @@ awful.screen.connect_for_each_screen(function(s)
     require("themes." .. currtheme .. ".bars.bars")(s)
 end)
 
-require("themes." .. currtheme .. ".rules")
+require("rules")
 
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
@@ -166,53 +164,3 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
---[[
-local wibox_wid = wibox.widget({
-		markup = 'This <i>is</i> a <b>textbox</b>!!!',
-    align  = 'center',
-    valign = 'center',
-		visible = true,
-    widget = wibox.widget.textbox	
-})
-
-local wibox_test = wibox({
-  	visible = true,
-		ontop = true,
-  	x = 50,
-  	y = 450,
-  	width = 100,
-  	height = 100,
-  	bg = "#00fff0",
-		wibox = wibox_wid
-})
-
-
-local anim = animation:new({
-    pos = {
-        neww = 100,
-        newc = helpers.hex_to_rgb("#00ff00")
-    },
-    easing = animation.easing.linear,
-    duration = 0.2,
-    update = function(self, pos)
-        wibox_test.width = pos.neww
-        wibox_test.bg = helpers.rgb_to_hex(pos.newc)
-    end
-
-})
-
-wibox_test:connect_signal("mouse::enter", function(item, _)
-    local args = {}
-    args.neww = 300
-    args.newc = helpers.hex_to_rgb("#ff0000")
-    anim:set(args)
-end)
-
-
-wibox_test:connect_signal("mouse::leave", function(item, _)
-    local args = {}
-    args.neww = 100
-    args.newc = helpers.hex_to_rgb("#00ff00")
-    anim:set(args)
-end)
---]]
