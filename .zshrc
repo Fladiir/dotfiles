@@ -1,6 +1,8 @@
 
 export TERM=xterm-256color
 export EDITOR=nvim
+export VISUAL=nvim
+# export EDITOR=firefox
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
