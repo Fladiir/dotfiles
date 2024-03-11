@@ -1,0 +1,80 @@
+! URxvt.font: xft:monaco:size=10
+URxvt.font: xft:DejavuSansMono Nerd Font:size=12
+! special
+URxvt.background: #0D1017
+URxvt.foreground: #CDD6F4
+URxvt.cursorColor: #F5E0DC
+
+! black
+URxvt.color0: #45475A
+URxvt.color8: #585B70
+
+! red
+URxvt.color1: #F38BA8
+URxvt.color9: #F38BA8
+
+! green
+URxvt.color2: #A6E3A1
+URxvt.color10: #A6E3A1
+
+! yellow
+URxvt.color3: #F9E2AF
+URxvt.color11: #F9E2AF
+
+! blue
+URxvt.color4: #89B4FA
+URxvt.color12: #89B4FA
+
+! magenta
+URxvt.color5: #F5C2E7
+URxvt.color13: #F5C2E7
+
+! cyan
+URxvt.color6: #94E2D5
+URxvt.color14: #94E2D5
+
+! white
+URxvt.color7: #BAC2DE
+URxvt.color15: #A6ADC8
+
+!! URxvt Appearance
+URxvt.letterSpace: -1
+URxvt.lineSpace: 0
+URxvt.geometry: 400x400
+URxvt.internalBorder: 10
+!URxvt.cursorBlink: true
+!URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: true
+URxvt.scrollBar_floating: true
+URxvt.scrollstyle: rxvt
+!URxvt.urgentOnBell: true
+URxvt.depth: 24
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! do not scroll with output
+!URxvt*scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+!URxvt*scrollWithBuffer: true
+
+! scroll back to the bottom on keypress
+!URxvt*scrollTtyKeypress: true
+
+URxvt.perl-ext-common: default,selection_to_clipboard,paste_clipboard,clipboard,keyboard-select
+!URxvt.clipboard.autocopy: false
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+!URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+!URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
+
+URxvt.url-launcher:   /usr/bin/firefox
+URxvt.underlineURLs:  True
+URxvt.tabbed.tabbar-bg: -1
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tab-fg: 3
+URxvt.tabbed.tab-bg: 0
