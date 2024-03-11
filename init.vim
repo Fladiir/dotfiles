@@ -10,6 +10,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'elkowar/yuck.vim'
+Plug 'mbbill/undotree'
 call plug#end()
 
 set termguicolors     " enable true colors support
