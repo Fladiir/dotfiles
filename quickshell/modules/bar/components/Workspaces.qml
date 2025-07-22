@@ -41,7 +41,7 @@ Item
 					required property int index
 
 					text: occupied[index + 1] ? BarConfig.occupiedWorkspaceIcon : BarConfig.emptyWorkspaceIcon
-					color: Hyprland.focusedWorkspace.id === (index + 1) ? BarConfig.focusedWorkspaceColor : BarConfig.baseWorkspaceColor
+					color: Hyprland.activeWsId === (index + 1) ? BarConfig.focusedWorkspaceColor : BarConfig.baseWorkspaceColor
 				}
 			}
 		}
