@@ -20,11 +20,13 @@ Shape
 		readonly property real rounding: 8
 		readonly property bool flatten: popouts.height < rounding * 2
 		readonly property real roundingY: flatten ? popouts.height / 2 : rounding
-		property real ibr: -1
+		//required property bool invertBottomRounding
+		property real ibr: popouts.x + popouts.width + 1 >= root.width ? -1 : 1
 		property real sideRounding: 1
 
 		startX: popouts.x - rounding
 		startY: popouts.y
+
 		PathArc {
 			relativeY: path.roundingY
 			relativeX: path.rounding * path.sideRounding
@@ -53,14 +55,14 @@ Shape
 
 		PathArc {
       relativeX: path.rounding
-			relativeY: -path.roundingY
+			relativeY: -path.roundingY * path.ibr
       radiusY: Math.min(path.rounding, root.popouts.height)
       radiusX: path.rounding
-			direction: PathArc.Counterclockwise
+			direction: path.ibr < 0 ? PathArc.Clockwise : PathArc.Counterclockwise
     }
 
 		PathLine {
-      relativeY: -root.popouts.height + path.roundingY * 2
+      relativeY: -(root.popouts.height - path.roundingY - path.roundingY * path.ibr)
       relativeX: 0
     }
 
@@ -71,10 +73,24 @@ Shape
 			radiusX: path.rounding
 			direction: PathArc.Clockwise 
     }
-		//PathLine { x: popouts.x + popouts.width; y: popouts.y }
-		//PathLine { x: popouts.x + popouts.width; y: popouts.y + popouts.height}
-		//PathLine { x: popouts.x; y: popouts.y + popouts.height }
-		//PathLine { x: popouts.x; y: popouts.y }
+
+		Behavior on fillColor
+		{
+			ColorAnimation
+			{
+				duration: Apperance.anim.durations.normal
+				easing.type: Easing.BezierSpline
+				easing.bezierCurve: Appearance.anim.curves.standard
+			}
+		}
+
+		Behavior on ibr {
+			NumberAnimation {
+					duration: Appearance.anim.durations.normal
+					easing.type: Easing.BezierSpline
+					easing.bezierCurve: Appearance.anim.curves.standard
+			}
+    }
 	}
 }
 

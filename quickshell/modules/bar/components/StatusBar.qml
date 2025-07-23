@@ -44,6 +44,20 @@ Item
 				text: "battery_0_bar"
 				color: "#dddddd"
 			}
+
+			//MaterialIcon
+			//{
+			//	id: volume 
+			//	text: "volume_up"
+			//	color: "#dddddd"
+			//}
+
+			//MaterialIcon
+			//{
+			//	id: krx 
+			//	text: "sensors_krx"
+			//	color: "#dddddd"
+			//}
 		}
 		
 		Behavior on width

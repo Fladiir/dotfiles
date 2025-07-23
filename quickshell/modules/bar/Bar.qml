@@ -41,8 +41,8 @@ Item
 			id: statusbar
 			bar: root
 			//anchors.right: clock.left
-			anchors.centerIn: parent
-			//anchors.right: parent.right
+			//anchors.centerIn: parent
+			anchors.right: parent.right
 			anchors.verticalCenter: parent.verticalCenter
 			anchors.rightMargin: 5
 		}
@@ -50,8 +50,8 @@ Item
 		Clock 
 		{
 			id: clock
-			anchors.right: parent.right
-			//anchors.centerIn: parent
+			//anchors.right: parent.right
+			anchors.centerIn: parent
 			anchors.verticalCenter: parent.verticalCenter
 		}
 

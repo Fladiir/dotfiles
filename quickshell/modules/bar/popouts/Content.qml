@@ -11,7 +11,7 @@ Item
 
 	//anchors.verticalCenter: anchors.verticalCenter
 
-	implicitWidth: hasCurrent ? ( content.children.find(c => c.shouldBeActive)?.implicitWidth ?? content.implicitWidth ) + 200 : 0
+	implicitWidth: hasCurrent ? ( content.children.find(c => c.shouldBeActive)?.implicitWidth ?? content.implicitWidth ) + 50 : 0
 	implicitHeight: hasCurrent ? ( content.children.find(c => c.shouldBeActive)?.implicitHeight ?? content.implicitHeight ) + 40 : 0
 	
 	Item
@@ -25,7 +25,7 @@ Item
 		//	color: "transparent"
 		//	width: root.width
 		//	height: root.height
-		//	//anchors.centerIn: parent
+		//	anchors.centerIn: parent
 		//	anchors.verticalCenter: parent.verticalCenter	
 		//}
 		Popout
@@ -44,9 +44,61 @@ Item
 			//anchors.centerIn: parent
 			anchors.verticalCenter: parent.verticalCenter	
 		}
+		Popout
+		{
+			name: "test1"
+			source: "Battery.qml"
+			//anchors.centerIn: parent
+			anchors.verticalCenter: parent.verticalCenter	
+		}
+		Popout
+		{
+			name: "test2"
+			source: "Battery.qml"
+			//anchors.centerIn: parent
+			anchors.verticalCenter: parent.verticalCenter	
+		}
 	}
-	
 
+	property int animLength: Appearance.anim.durations.normal
+  property list<real> animCurve: Appearance.anim.curves.emphasized
+	
+	Behavior on x
+	{
+		enabled: root.implicitHeight > 0
+		Anim {}
+	}
+
+	Behavior on y
+	{
+		Anim {}
+	}
+
+	Behavior on implicitWidth 
+	{
+    enabled: root.implicitHeight > 0
+    Anim {
+      duration: root.animLength
+      easing.bezierCurve: root.animCurve
+    }
+  }
+
+	Behavior on implicitHeight 
+	{
+
+		Anim 
+		{
+      duration: root.animLength
+      easing.bezierCurve: root.animCurve
+    }
+  }
+
+	component Anim: NumberAnimation 
+	{
+  	duration: Appearance.anim.durations.normal
+    easing.type: Easing.BezierSpline
+    easing.bezierCurve: Appearance.anim.curves.emphasized
+  }
 
 	component Popout: Loader
 	{
@@ -78,5 +130,36 @@ Item
 			}
 
 		}
+
+		transitions: [
+            Transition {
+                from: ""
+                to: "active"
+
+                SequentialAnimation {
+                    PropertyAction {
+                        property: "active"
+                    }
+                    Anim {
+                        property: "opacity"
+                        easing.bezierCurve: Appearance.anim.curves.standard
+                    }
+                }
+            },
+            Transition {
+                from: "active"
+                to: ""
+
+                SequentialAnimation {
+                    Anim {
+                        property: "opacity"
+                        easing.bezierCurve: Appearance.anim.curves.standard
+                    }
+                    PropertyAction {
+                        property: "active"
+                    }
+                }
+            }
+        ]
 	}
 }
