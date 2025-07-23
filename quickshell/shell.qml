@@ -41,11 +41,28 @@ ShellRoot
 					x: Config.borderThickness
 					y: bar.implicitHeight
 					width: mainWindow.width - 2 * Config.borderThickness
-					height: mainWindow.height - bar.implicitHeight
+					height: mainWindow.height - bar.implicitHeight - Config.borderThickness
 					intersection: Intersection.Xor
+
+					regions: regions.instances
 				}
 
-				// TODO: add panels regions
+				Variants
+				{
+					id: regions
+					model: panels.children
+					Region 
+					{
+						required property Item modelData
+
+						x: modelData.x + Config.borderThickness
+						y: modelData.y + bar.implicitHeight
+						width: modelData.width
+						height: modelData.height
+						intersection: Intersection.Subtract
+          }
+				}
+
 
 				anchors.top: true
 				anchors.bottom: true
@@ -62,14 +79,35 @@ ShellRoot
 							shadowColor: Qt.alpha("#000000", 0.7)
 					}
 
+					Backgrounds
+					{
+						popouts: panels.popouts
+					}
+
 					Border {
 							bar: bar
+					}
+				}
+
+
+				Interactions
+				{
+					id: interactions
+					bar: bar
+					panels: panels
+					popouts: panels.popouts
+
+					Panels
+					{
+						id: panels
+						bar: bar
 					}
 				}
 
 				Bar	
 				{
 					id: bar
+					popouts: panels.popouts
 				}
 			}
 		}
