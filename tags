@@ -10,6 +10,11 @@
 !_TAG_FIELD_DESCRIPTION	typeref	/Type and name of a variable or typedef/
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_KIND_DESCRIPTION!CSS	c,class	/classes/
+!_TAG_KIND_DESCRIPTION!CSS	i,id	/identities/
+!_TAG_KIND_DESCRIPTION!CSS	s,selector	/selectors/
+!_TAG_KIND_DESCRIPTION!Iniconf	k,key	/keys/
+!_TAG_KIND_DESCRIPTION!Iniconf	s,section	/sections/
 !_TAG_KIND_DESCRIPTION!Markdown	S,subsection	/level 2 sections/
 !_TAG_KIND_DESCRIPTION!Markdown	T,l4subsection	/level 4 sections/
 !_TAG_KIND_DESCRIPTION!Markdown	c,chapter	/chapters/
@@ -18,15 +23,48 @@
 !_TAG_KIND_DESCRIPTION!Markdown	s,section	/sections/
 !_TAG_KIND_DESCRIPTION!Markdown	t,subsubsection	/level 3 sections/
 !_TAG_KIND_DESCRIPTION!Markdown	u,l5subsection	/level 5 sections/
+!_TAG_KIND_DESCRIPTION!Vim	C,constant	/constant definitions/
+!_TAG_KIND_DESCRIPTION!Vim	a,augroup	/autocommand groups/
+!_TAG_KIND_DESCRIPTION!Vim	c,command	/user-defined commands/
+!_TAG_KIND_DESCRIPTION!Vim	f,function	/function definitions/
+!_TAG_KIND_DESCRIPTION!Vim	k,class	/vim9script classes/
+!_TAG_KIND_DESCRIPTION!Vim	m,map	/maps/
+!_TAG_KIND_DESCRIPTION!Vim	n,filename	/vimball filename/
+!_TAG_KIND_DESCRIPTION!Vim	v,variable	/variable definitions/
 !_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
 !_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
 !_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
 !_TAG_OUTPUT_VERSION	1.1	/current.age/
+!_TAG_PARSER_VERSION!CSS	0.0	/current.age/
+!_TAG_PARSER_VERSION!Iniconf	0.0	/current.age/
 !_TAG_PARSER_VERSION!Markdown	1.1	/current.age/
+!_TAG_PARSER_VERSION!Vim	1.1	/current.age/
 !_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
 !_TAG_PROC_CWD	/home/jotun/.dotfiles/	//
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	6.2.0	/v6.2.0/
+#entry:selected	wofi/style.css	/^#entry:selected {$/;"	i
+#entry:selected #text	wofi/style.css	/^#entry:selected #text {$/;"	i
+#inner-box	wofi/style.css	/^#inner-box {$/;"	i
+#input	wofi/style.css	/^#input {$/;"	i
+#outer-box	wofi/style.css	/^#outer-box {$/;"	i
+#scroll	wofi/style.css	/^#scroll {$/;"	i
+#text	wofi/style.css	/^#text {$/;"	i
+<C-H>	nvim/init.vim	/^map <C-H> :sp<CR>$/;"	m
+<C-S>	nvim/init.vim	/^map <C-S> :vs<CR>$/;"	m
+<C-down>	nvim/init.vim	/^map <C-down> 	<C-w>j$/;"	m
+<C-left>	nvim/init.vim	/^map <C-left> 	<C-w>h$/;"	m
+<C-right>	nvim/init.vim	/^map <C-right> 	<C-w>l$/;"	m
+<C-up>	nvim/init.vim	/^map <C-up> 	<C-w>k$/;"	m
+LightlineGutentags	nvim/init.vim	/^function! LightlineGutentags()$/;"	f
+LightlineRWStat	nvim/init.vim	/^function! LightlineRWStat()$/;"	f
+ayucolor	nvim/init.vim	/^let ayucolor="dark"   " for dark version of theme$/;"	v
 dotfiles	README.md	/^# dotfiles/;"	c
+font_family      family	kitty/kitty.conf	/^font_family      family="JetBrains Mono"$/;"	k
+g:ale_linters	nvim/init.vim	/^let g:ale_linters = {'gcc' : ['gcc']}$/;"	v
+g:ale_linters_explicit	nvim/init.vim	/^let g:ale_linters_explicit = 1$/;"	v
+g:gutentags_project_root	nvim/init.vim	/^let g:gutentags_project_root = ['*.ioc', '.git', 'Makefile', "CMakeLists.txt" ]$/;"	v
+g:lightline	nvim/init.vim	/^let g:lightline = {$/;"	v
+window	wofi/style.css	/^window {$/;"	s
