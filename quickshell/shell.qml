@@ -35,6 +35,7 @@ ShellRoot
 				color: "transparent"
 				//color: "#22ff0000"
 				WlrLayershell.exclusionMode: ExclusionMode.Ignore
+				WlrLayershell.keyboardFocus: WlrKeyboardFocus.OnDemand
 				
 				mask: Region 
 				{
@@ -62,8 +63,7 @@ ShellRoot
 						intersection: Intersection.Subtract
           }
 				}
-
-
+				
 				anchors.top: true
 				anchors.bottom: true
 				anchors.left: true
@@ -82,6 +82,7 @@ ShellRoot
 					Backgrounds
 					{
 						popouts: panels.popouts
+						panels: panels
 					}
 
 					Border {

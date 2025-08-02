@@ -8,6 +8,7 @@ Item
 	property string currentName
 	property bool hasCurrent
 	property real currentCenter
+	readonly property string name: "popout"
 
 	//anchors.verticalCenter: anchors.verticalCenter
 
