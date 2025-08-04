@@ -3,6 +3,7 @@ import Quickshell.Widgets
 import Quickshell.Wayland
 
 import QtQuick
+import QtQuick.Layouts
 import QtQuick.Shapes
 import QtQuick.Controls
 
@@ -22,16 +23,20 @@ Item
 	implicitHeight: active ? content.height + PanelsConf.launcher.paddingV : 0
 	implicitWidth: active ? input.width + 2 * PanelsConf.launcher.paddingH : 0
 
-	Column	
+	Column
 	{
 		id: content
 		visible: active
-		leftPadding: PanelsConf.launcher.paddingH
+		//leftPadding: PanelsConf.launcher.paddingH / 2
+		//rightPadding: PanelsConf.launcher.paddingH / 2
 		topPadding: PanelsConf.launcher.paddingV
+		anchors.horizontalCenter: parent.horizontalCenter
 		
 		WrapperItem
 		{
 			bottomMargin: 10
+			leftMargin: 10
+
 			TextField
 			{
 				id: input
@@ -109,7 +114,8 @@ Item
 				color: index == root.selectedIndex ? Config.altUIBgColor : "transparent"
 				radius: 4
 				height: 32
-				width: root.implicitWidth - 2 * PanelsConf.launcher.paddingH
+				//width: root.implicitWidth - 2 * PanelsConf.launcher.paddingH
+				width: input.implicitWidth + 10
 
 				Text
 				{
