@@ -73,7 +73,8 @@ ShellRoot
 				{
 					anchors.fill: parent
 					layer.enabled: true
-					layer.effect: MultiEffect {
+					layer.effect: MultiEffect 
+					{
 							shadowEnabled: true
 							blurMax: 15
 							shadowColor: Qt.alpha("#000000", 0.7)
@@ -85,7 +86,8 @@ ShellRoot
 						panels: panels
 					}
 
-					Border {
+					Border 
+					{
 							bar: bar
 					}
 				}

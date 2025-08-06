@@ -1,6 +1,9 @@
 import qs.config
 import qs.services
 import qs.widgets
+import qs.modules.bar.popouts as BarPopouts
+
+
 import Quickshell
 import QtQuick
 import QtQuick.Layouts
@@ -11,6 +14,7 @@ Item
 	implicitWidth: wrapper.width
 
 	required property Item bar
+	required property BarPopouts.Content popouts
 
 	readonly property Item network: network
 	readonly property Item battery: battery 
@@ -22,7 +26,9 @@ Item
 
 		color: Config.altUIBgColor
 		height: bar.implicitHeight - (2 * Config.wrapperRectPadding)
-		width: layout.width + 40
+		//color: "transparent"
+		//height: bar.implicitHeight
+		width: layout.width + 20
 		radius: 8
 
 		RowLayout
@@ -31,33 +37,19 @@ Item
 			anchors.centerIn: parent
 			spacing: 5
 			
-			MaterialIcon
+			StatusItem
 			{
 				id: network
-				text: "network_wifi"
-				color: "#dddddd"
+				name: "network"
+				icon: "network_wifi"
 			}
 
-			MaterialIcon
+			StatusItem
 			{
 				id: battery
-				text: "battery_0_bar"
-				color: "#dddddd"
+				name: "battery"
+				icon: "battery_0_bar"
 			}
-
-			//MaterialIcon
-			//{
-			//	id: volume 
-			//	text: "volume_up"
-			//	color: "#dddddd"
-			//}
-
-			//MaterialIcon
-			//{
-			//	id: krx 
-			//	text: "sensors_krx"
-			//	color: "#dddddd"
-			//}
 		}
 		
 		Behavior on width
@@ -70,5 +62,50 @@ Item
 			easing.type: Easing.BezierSpline
 			easing.bezierCurve: Appearance.anim.curves.standard
     }
+
+		component StatusItem: Rectangle
+		{
+			id: wrapper
+			color: "transparent"
+			//width: bar.implicitHeight
+			//height: bar.implicitHeight
+			width: micon.implicitHeight
+			height: micon.implicitHeight
+			
+			required property string name
+			required property string icon
+
+			MouseArea
+			{
+				anchors.fill: parent
+				hoverEnabled: true
+
+				onContainsMouseChanged:
+				{
+					if(containsMouse)
+					{
+						popouts.currentName = name;
+						popouts.currentCenter = root.x + wrapper.x + micon.x + 10 + ( micon.width / 2 );
+						popouts.hasCurrent = true;
+					}
+					else
+					{
+
+						if((mouseX <= 1 || mouseX >= wrapper.width - 1)) 
+						{
+							popouts.currentName = "EMPTY";
+							popouts.hasCurrent = false;
+						}
+					}
+				}
+			}
+			MaterialIcon
+			{
+				id: micon 
+				text: icon
+				color: "#dddddd"
+				anchors.centerIn: parent
+			}
+		}
 	}
 }

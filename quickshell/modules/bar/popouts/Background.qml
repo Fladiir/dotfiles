@@ -16,7 +16,7 @@ ShapePath
 	fillColor: Config.mainUIBgColor
 	strokeWidth: -1
 	//required property bool invertBottomRounding
-	property real ibr: popouts.x + popouts.width + 1 >= root.width ? -1 : 1
+	property real ibr: popouts.x + popouts.width + 1 >= mainWindow.width ? -1 : 1
 	property real sideRounding: 1
 
 	startX: popouts.x - rounding

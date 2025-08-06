@@ -39,9 +39,6 @@ MouseArea
 	{
 		if (!containsMouse)
 		{
-			popouts.hasCurrent = false;
-			popouts.currentName = "";
-			
 			panels.launcher.active = false;
 		}
 	}
@@ -61,24 +58,6 @@ MouseArea
 			{
 				panels.launcher.active = false;
 			}
-		}
-		
-		const popout = panels.popouts;
-		if ( y < bar.implicitHeight + popout.height )
-		{
-			if ( y < bar.implicitHeight )
-			{
-				root.bar.checkHover(x);
-			}
-			else
-			{
-				popouts.hasCurrent = withinPanelHeight( popout, x, y );
-			}
-		}
-		else
-		{
-			popouts.currentName = "";
-			popouts.hasCurrent = false;
 		}
 	}
 }

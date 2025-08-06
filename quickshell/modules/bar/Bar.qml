@@ -40,51 +40,18 @@ Item
 		{
 			id: statusbar
 			bar: root
-			//anchors.right: clock.left
-			//anchors.centerIn: parent
 			anchors.right: parent.right
 			anchors.verticalCenter: parent.verticalCenter
 			anchors.rightMargin: 5
+			popouts: root.popouts
 		}
 
 		Clock 
 		{
 			id: clock
-			//anchors.right: parent.right
 			anchors.centerIn: parent
 			anchors.verticalCenter: parent.verticalCenter
 		}
-
-	}
-
-	function checkHover(x: real): void
-	{
-		const statusbarx = statusbar.x
-		const networkx = statusbar.x + statusbar.network.x + 20
-		const networksize = statusbar.network.width
-		const batteryx = statusbar.x + statusbar.battery.x + 20
-		const batterysize = statusbar.battery.width
-
-		if(x >= networkx && x <= networkx + networksize) 
-		{
-			popouts.currentName = "network";
-			popouts.currentCenter = networkx + ( networksize / 2 )
-			popouts.hasCurrent = true;
-		}
-		else if(x >= batteryx && x <= batteryx + batterysize) 
-		{
-			popouts.currentName = "battery"
-			popouts.currentCenter = batteryx + ( batterysize / 2 )
-			popouts.hasCurrent = true
-		}
-		else
-		{
-			popouts.currentName = "EMPTY"
-			popouts.hasCurrent = false
-		}
-		
-		//console.log(popouts.currentName);
-	
 	}
 }
 

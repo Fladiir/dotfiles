@@ -9,6 +9,7 @@ Item
 	property bool hasCurrent
 	property real currentCenter
 	readonly property string name: "popout"
+	readonly property Item contentma: contentma
 
 	//anchors.verticalCenter: anchors.verticalCenter
 
@@ -19,22 +20,28 @@ Item
 	{
 		id: content
 		anchors.fill: parent
-		anchors.leftMargin: 10
+		//anchors.leftMargin: 10
 
-		//Rectangle
-		//{
-		//	color: "transparent"
-		//	width: root.width
-		//	height: root.height
-		//	anchors.centerIn: parent
-		//	anchors.verticalCenter: parent.verticalCenter	
-		//}
+		MouseArea
+		{
+			id: contentma
+			hoverEnabled: true
+			anchors.fill: parent
+
+			onContainsMouseChanged:
+			{
+				if(!containsMouse)
+				{
+					root.hasCurrent = false
+					root.currentName = "EMPTY"
+				}
+			}
+		}
+
 		Popout
 		{
 			name: "network"
 			source: "Network.qml"
-			//anchors.centerIn: parent
-			anchors.verticalCenter: parent.verticalCenter	
 		}
 		
 
@@ -42,23 +49,68 @@ Item
 		{
 			name: "battery"
 			source: "Battery.qml"
-			//anchors.centerIn: parent
-			anchors.verticalCenter: parent.verticalCenter	
 		}
-		Popout
+	}
+
+	component Popout: Loader
+	{
+		id: popout
+
+		required property string name
+		property bool shouldBeActive: root.currentName === name
+
+		anchors.centerIn: parent
+
+		opacity: 0
+		scale: 0.8
+		active: false
+		asynchronous: true
+
+		states: State
 		{
-			name: "test1"
-			source: "Battery.qml"
-			//anchors.centerIn: parent
-			anchors.verticalCenter: parent.verticalCenter	
+			name: "active"
+			when: popout.shouldBeActive
+
+			PropertyChanges
+			{
+				popout.active: true
+				popout.opacity: 1
+				popout.scale: 1
+			}
+
 		}
-		Popout
-		{
-			name: "test2"
-			source: "Battery.qml"
-			//anchors.centerIn: parent
-			anchors.verticalCenter: parent.verticalCenter	
-		}
+
+		transitions: 
+		[
+			Transition {
+				from: ""
+				to: "active"
+
+				SequentialAnimation {
+					PropertyAction {
+						property: "active"
+					}
+					Anim {
+						property: "opacity"
+						easing.bezierCurve: Appearance.anim.curves.standard
+					}
+				}
+			},
+			Transition {
+				from: "active"
+				to: ""
+
+				SequentialAnimation {
+					Anim {
+						property: "opacity"
+						easing.bezierCurve: Appearance.anim.curves.standard
+					}
+					PropertyAction {
+						property: "active"
+					}
+				}
+			}
+		]
 	}
 
 	property int animLength: Appearance.anim.durations.normal
@@ -100,67 +152,4 @@ Item
     easing.type: Easing.BezierSpline
     easing.bezierCurve: Appearance.anim.curves.emphasized
   }
-
-	component Popout: Loader
-	{
-		id: popout
-
-		required property string name
-		property bool shouldBeActive: root.currentName === name
-
-		//anchors.verticalCenter: parent.verticalCenter
-		//anchors.right: parent.right
-
-		opacity: 0
-		scale: 0.8
-		active: false
-		asynchronous: true
-
-		//onStatusChanged: console.log( "[" + popout.state + "] W: " + root.implicitWidth + " H: " + root.implicitHeight) 
-		//onStatusChanged: console.log( "[" + name + "] W: " + root.x + " H: " + root.y) 
-		states: State
-		{
-			name: "active"
-			when: popout.shouldBeActive
-
-			PropertyChanges
-			{
-				popout.active: true
-				popout.opacity: 1
-				popout.scale: 1
-			}
-
-		}
-
-		transitions: [
-            Transition {
-                from: ""
-                to: "active"
-
-                SequentialAnimation {
-                    PropertyAction {
-                        property: "active"
-                    }
-                    Anim {
-                        property: "opacity"
-                        easing.bezierCurve: Appearance.anim.curves.standard
-                    }
-                }
-            },
-            Transition {
-                from: "active"
-                to: ""
-
-                SequentialAnimation {
-                    Anim {
-                        property: "opacity"
-                        easing.bezierCurve: Appearance.anim.curves.standard
-                    }
-                    PropertyAction {
-                        property: "active"
-                    }
-                }
-            }
-        ]
-	}
 }
