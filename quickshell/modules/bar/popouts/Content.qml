@@ -8,10 +8,7 @@ Item
 	property string currentName
 	property bool hasCurrent
 	property real currentCenter
-	readonly property string name: "popout"
 	readonly property Item contentma: contentma
-
-	//anchors.verticalCenter: anchors.verticalCenter
 
 	implicitWidth: hasCurrent ? ( content.children.find(c => c.shouldBeActive)?.implicitWidth ?? content.implicitWidth ) + 50 : 0
 	implicitHeight: hasCurrent ? ( content.children.find(c => c.shouldBeActive)?.implicitHeight ?? content.implicitHeight ) + 40 : 0
@@ -20,7 +17,6 @@ Item
 	{
 		id: content
 		anchors.fill: parent
-		//anchors.leftMargin: 10
 
 		MouseArea
 		{

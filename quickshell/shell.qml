@@ -7,6 +7,7 @@ import QtQuick.Effects
 import qs.config
 import qs.modules
 import qs.modules.bar
+import qs.modules.panels
 import qs.widgets
 
 ShellRoot 
@@ -98,13 +99,12 @@ ShellRoot
 					id: interactions
 					bar: bar
 					panels: panels
-					popouts: panels.popouts
+				}
 
-					Panels
-					{
-						id: panels
-						bar: bar
-					}
+				Panels
+				{
+					id: panels
+					bar: bar
 				}
 
 				Bar	

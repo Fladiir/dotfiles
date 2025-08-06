@@ -9,7 +9,6 @@ MouseArea
 	id: root
 
 	required property Item bar
-	required property BarPopouts.Content popouts
 	required property Panels panels
 
 	anchors.fill: parent
