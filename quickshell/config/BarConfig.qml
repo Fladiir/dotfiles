@@ -12,5 +12,6 @@ Singleton {
 	readonly property string occupiedWorkspaceIcon: "radio_button_checked"
 	
 	readonly property string baseWorkspaceColor: "#44dddddd"
-	readonly property string focusedWorkspaceColor: "#4960ab"
+	//readonly property string focusedWorkspaceColor: "#4960ab"
+	readonly property string focusedWorkspaceColor: "#ff9966"
 }
