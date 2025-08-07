@@ -19,8 +19,8 @@ MouseArea
 	{
 		const x = event.x
 		const y = event.y
-
-		if ( y > root.height - 3 )
+		
+		if ( y > root.height - 3 && (x > mainWindow.width / 2 - 250 && x < mainWindow.width / 2 + 250))
 		{
 			visibilities.launcher = true;		
 		}

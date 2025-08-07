@@ -20,7 +20,7 @@ Item
 	property int selectedIndex: 0
 
 	implicitHeight: visibilities.launcher ? content.height + PanelsConf.launcher.paddingV : 0
-	implicitWidth: visibilities.launcher ? input.width + 2 * PanelsConf.launcher.paddingH : 0
+	implicitWidth: visibilities.launcher ? apps.width + 2 * PanelsConf.launcher.paddingH : 0
 
 	MouseArea
 	{
@@ -29,7 +29,7 @@ Item
 
 		onContainsMouseChanged:
 		{
-			if(!containsMouse && !input.hovered)
+			if(!containsMouse && !apps.input.hovered)
 			{
 				root.visibilities.launcher = false;
 			}
@@ -42,192 +42,139 @@ Item
 		visible: root.visibilities.launcher
 		topPadding: PanelsConf.launcher.paddingV
 		height: 300
-		width: input.implicitWidth + 2 * PanelsConf.launcher.paddingH
+		width: apps.implicitWidth + 2 * PanelsConf.launcher.paddingH
 
-		WrapperItem
+		AppList
 		{
+			id: apps
+			visibilities: root.visibilities
 			anchors.horizontalCenter: parent.horizontalCenter
-			bottomMargin: 20
-			leftMargin: 10
-
-			Connections 
-			{
-				target: root.visibilities
-
-				function onLauncherChanged(): void {
-					if (root.visibilities.launcher)
-					{
-						input.focus = true;
-						input.forceActiveFocus();
-					}
-					else 
-					{
-						input.text = "";
-					}
-				}
-			}
-
-			TextField
-			{
-				id: input
-				font.family: Appearance.font.family.sans
-				font.pointSize: Appearance.font.size.smaller
-				leftInset: -10
-				implicitWidth: bg.implicitWidth
-				implicitHeight: bg.implicitHeight
-				leftPadding: 28
-				activeFocusOnTab: true
-
-				background: 
-				Rectangle{
-					id: bg
-					antialiasing: true
-					color: "transparent"
-					border.width: 2
-					border.color: !input.focus ? "#55ffffff" : "#ff9966"
-					implicitWidth: 500
-					implicitHeight: 42
-					radius: 4
-
-					Behavior on border.color
-					{
-						ColorAnimation 
-						{
-							duration: Appearance.anim.durations.normal
-							easing.type: Easing.BezierSpline
-							easing.bezierCurve: Appearance.anim.curves.standard
-						}
-					}
-
-					Row
-					{
-						anchors.verticalCenter: parent.verticalCenter
-
-						WrapperItem
-						{
-							leftMargin: 5
-							topMargin: 2
-
-							MaterialIcon
-							{
-								text: "search"
-								//color: !input.focus ? "#55ffffff" : "#bbffffff"
-								color: !input.focus ? "#55ffffff" : "#ff9966"
-								font.pointSize: 24
-
-								Behavior on color
-								{
-									ColorAnimation 
-									{
-										duration: Appearance.anim.durations.normal
-										easing.type: Easing.BezierSpline
-										easing.bezierCurve: Appearance.anim.curves.standard
-									}
-								}
-							}
-						}
-					}
-				}
-
-				color: "#dddddd"
-				renderType: TextField.NativeRendering
-
-				onTextEdited:
-				{
-					root.apps = DesktopEntries.applications.values.filter(a => a.name.includes(input.text));
-				}
-
-				Keys.onPressed: event => {
-
-					if (event.key == Qt.Key_Escape)
-					{
-						root.visibilities.launcher = false;
-					}
-
-
-					if (event.key == Qt.Key_Down)
-					{
-						listView.forceActiveFocus();
-					}
-				}
-			}
-
 		}
 
-		ListView	
-		{
-			id: listView
-			model: root.apps
-			width: input.implicitWidth
-			height: root.implicitHeight - input.height - 40
-			anchors.horizontalCenter: parent.horizontalCenter
-			activeFocusOnTab: true
+		//WrapperItem
+		//{
+		//	anchors.horizontalCenter: parent.horizontalCenter
+		//	bottomMargin: 20
+		//	leftMargin: 10
+
+		//	Connections 
+		//	{
+		//		target: root.visibilities
+
+		//		function onLauncherChanged(): void {
+		//			if (root.visibilities.launcher)
+		//			{
+		//				input.focus = true;
+		//				input.forceActiveFocus();
+		//			}
+		//			else 
+		//			{
+		//				input.text = "";
+		//				root.apps = DesktopEntries.applications.values
+		//			}
+		//		}
+		//	}
+
+		//	Searchbar
+		//	{
+		//		id: input
+		//		
+		//		barWidth: 500
+		//		onTextEdited:
+		//		{
+		//			root.apps = DesktopEntries.applications.values.filter(a => a.name.includes(input.text));
+		//		}
+
+		//		Keys.onPressed: event => {
+
+		//			if (event.key == Qt.Key_Escape)
+		//			{
+		//				root.visibilities.launcher = false;
+		//			}
 
 
-			focus: true
-			delegate: 
-			WrapperRectangle
-			{
-				property int index
-				topMargin: 16
-				leftMargin: 10
-				color: ListView.isCurrentItem ? Config.altUIBgColor : "transparent"
-				radius: 4
-				height: 32
-				width: input.implicitWidth - 15
+		//			if (event.key == Qt.Key_Down)
+		//			{
+		//				listView.forceActiveFocus();
+		//			}
+		//		}
+		//	}
+		//}
 
-				Behavior on color
-				{
-					ColorAnimation 
-					{
-						duration: Appearance.anim.durations.small
-						easing.type: Easing.BezierSpline
-						easing.bezierCurve: Appearance.anim.curves.standard
-					}
-				}
+		//ListView	
+		//{
+		//	id: listView
+		//	model: root.apps
+		//	width: input.implicitWidth
+		//	height: root.implicitHeight - input.height - 40
+		//	anchors.horizontalCenter: parent.horizontalCenter
+		//	activeFocusOnTab: true
 
-				Text
-				{
-					id: text
-					font.family: Appearance.font.family.sans
-					font.pointSize: Appearance.font.size.smaller
-					color: "#dddddd"
-					text: name
-					anchors.verticalCenter: parent.verticalCenter
-				}
 
-			}
+		//	focus: true
+		//	delegate: 
+		//	WrapperRectangle
+		//	{
+		//		property int index
+		//		topMargin: 16
+		//		leftMargin: 10
+		//		color: ListView.isCurrentItem ? Config.altUIBgColor : "transparent"
+		//		radius: 4
+		//		height: 32
+		//		width: input.implicitWidth - 15
 
-			ScrollBar.vertical:
-			ScrollBar
-			{
-				policy: ScrollBar.AlwaysOn
-				anchors.right: parent.right
-			}
+		//		Behavior on color
+		//		{
+		//			ColorAnimation 
+		//			{
+		//				duration: Appearance.anim.durations.small
+		//				easing.type: Easing.BezierSpline
+		//				easing.bezierCurve: Appearance.anim.curves.standard
+		//			}
+		//		}
 
-			Keys.onPressed: event => {
+		//		Text
+		//		{
+		//			id: text
+		//			font.family: Appearance.font.family.sans
+		//			font.pointSize: Appearance.font.size.smaller
+		//			color: "#dddddd"
+		//			text: name
+		//			anchors.verticalCenter: parent.verticalCenter
+		//		}
 
-				if (event.key == Qt.Key_Escape)
-				{
-					root.visibilities.launcher = false;
-				}
+		//	}
 
-				if (event.key == Qt.Key_Return)
-				{
-					root.apps[listView.currentIndex].execute();
-					root.visibilities.launcher = false;
-				}
+		//	ScrollBar.vertical:
+		//	ScrollBar
+		//	{
+		//		policy: ScrollBar.AlwaysOn
+		//		anchors.right: parent.right
+		//	}
 
-				if (event.key == Qt.Key_Up)
-				{
-					if(listView.currentIndex == 0)
-					{
-						input.forceActiveFocus();
-					}
-				}
+		//	Keys.onPressed: event => {
 
-			}
-		}
+		//		if (event.key == Qt.Key_Escape)
+		//		{
+		//			root.visibilities.launcher = false;
+		//		}
+
+		//		if (event.key == Qt.Key_Return)
+		//		{
+		//			root.apps[listView.currentIndex].execute();
+		//			root.visibilities.launcher = false;
+		//		}
+
+		//		if (event.key == Qt.Key_Up)
+		//		{
+		//			if(listView.currentIndex == 0)
+		//			{
+		//				input.forceActiveFocus();
+		//			}
+		//		}
+
+		//	}
+		//}
 
 	}
 
