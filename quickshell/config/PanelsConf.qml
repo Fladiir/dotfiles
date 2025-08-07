@@ -11,7 +11,7 @@ Singleton
 
 	component Launcher: QtObject
 	{
-		readonly property int paddingH: 40
+		readonly property int paddingH: 25
 		readonly property int paddingV: 20
 	}
 

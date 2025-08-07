@@ -13,12 +13,15 @@ Item
 	readonly property Item launcher: launcher
 
 	required property Item bar 
+	required property PersistentProperties visibilities
+
 	anchors.fill: parent
 	anchors.topMargin: bar.implicitHeight
 
 	Launcher.Content
 	{
 		id: launcher
+		visibilities: root.visibilities
 
 		x: (root.width / 2) - (implicitWidth / 2)
 		y: root.height - implicitHeight

@@ -1,3 +1,4 @@
+import Quickshell
 import QtQuick
 import QtQuick.Shapes
 
@@ -13,6 +14,7 @@ Shape
 
 	required property BarPopouts.Content popouts
 	required property Panels panels
+	required property PersistentProperties visibilities
 
 	preferredRendererType: Shape.CurveRenderer
 
@@ -24,8 +26,9 @@ Shape
 	Launcher.Background
 	{
 		content: root.panels.launcher
-		startX: ( root.width / 2 ) - ( panels.launcher.width / 2) 
-		startY: root.height - panels.launcher.height
+		visibilities: root.visibilities
+		startX: ( root.width / 2 ) - ( panels.launcher.width / 2) - PanelsConf.rounding
+		startY: root.height
 	}
 
 }

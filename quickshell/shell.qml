@@ -5,6 +5,7 @@ import QtQuick
 import QtQuick.Effects
 
 import qs.config
+import qs.services
 import qs.modules
 import qs.modules.bar
 import qs.modules.panels
@@ -13,6 +14,20 @@ import qs.widgets
 ShellRoot 
 {
 	
+	Scope
+	{
+			GlobalShortcut
+			{
+				name: "launcher"
+
+				onPressed:
+				{
+					const vis = Visibilities.getForActive();
+					vis.launcher = true;
+				}
+			}
+	}
+
 	Variants 
 	{
 		model: Quickshell.screens
@@ -21,6 +36,7 @@ ShellRoot
 		{
 			id: scope
 			required property ShellScreen modelData
+
 
 			Exclusions
 			{
@@ -36,8 +52,8 @@ ShellRoot
 				color: "transparent"
 				//color: "#22ff0000"
 				WlrLayershell.exclusionMode: ExclusionMode.Ignore
-				WlrLayershell.keyboardFocus: WlrKeyboardFocus.OnDemand
-				
+				WlrLayershell.keyboardFocus: visibilities.launcher ? WlrKeyboardFocus.OnDemand : WlrKeyboardFocus.None
+
 				mask: Region 
 				{
 					x: Config.borderThickness
@@ -64,6 +80,14 @@ ShellRoot
 						intersection: Intersection.Subtract
           }
 				}
+
+				HyprlandFocusGrab {
+					active: visibilities.launcher
+					windows: [mainWindow]
+					onCleared: {
+						visibilities.launcher = false;
+					}
+				}
 				
 				anchors.top: true
 				anchors.bottom: true
@@ -85,6 +109,7 @@ ShellRoot
 					{
 						popouts: panels.popouts
 						panels: panels
+						visibilities: visibilities
 					}
 
 					Border 
@@ -92,6 +117,14 @@ ShellRoot
 							bar: bar
 					}
 				}
+				
+				PersistentProperties {
+          id: visibilities
+
+          property bool launcher
+
+          Component.onCompleted: Visibilities.load(scope.modelData, this)
+        }
 
 
 				Interactions
@@ -99,12 +132,14 @@ ShellRoot
 					id: interactions
 					bar: bar
 					panels: panels
+					visibilities: visibilities
 				}
 
 				Panels
 				{
 					id: panels
 					bar: bar
+					visibilities: visibilities
 				}
 
 				Bar	

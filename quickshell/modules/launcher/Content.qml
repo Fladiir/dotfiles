@@ -8,114 +8,183 @@ import QtQuick.Shapes
 import QtQuick.Controls
 
 import qs.config
+import qs.widgets
 
 Item
 {
 	id: root
-	
-	readonly property string name: "launcher"
 
-	property bool active: false
+	required property PersistentProperties visibilities
 
-	property list<DesktopEntry> apps: []
+	property list<DesktopEntry> apps: DesktopEntries.applications.values
 	property int selectedIndex: 0
 
-	implicitHeight: active ? content.height + PanelsConf.launcher.paddingV : 0
-	implicitWidth: active ? input.width + 2 * PanelsConf.launcher.paddingH : 0
+	implicitHeight: visibilities.launcher ? content.height + PanelsConf.launcher.paddingV : 0
+	implicitWidth: visibilities.launcher ? input.width + 2 * PanelsConf.launcher.paddingH : 0
+
+	MouseArea
+	{
+		anchors.fill: parent
+		hoverEnabled: true
+
+		onContainsMouseChanged:
+		{
+			if(!containsMouse && !input.hovered)
+			{
+				root.visibilities.launcher = false;
+			}
+		}
+	}
 
 	Column
 	{
 		id: content
-		visible: active
-		//leftPadding: PanelsConf.launcher.paddingH / 2
-		//rightPadding: PanelsConf.launcher.paddingH / 2
+		visible: root.visibilities.launcher
 		topPadding: PanelsConf.launcher.paddingV
-		anchors.horizontalCenter: parent.horizontalCenter
-		
+		height: 300
+		width: input.implicitWidth + 2 * PanelsConf.launcher.paddingH
+
 		WrapperItem
 		{
-			bottomMargin: 10
+			anchors.horizontalCenter: parent.horizontalCenter
+			bottomMargin: 20
 			leftMargin: 10
+
+			Connections 
+			{
+				target: root.visibilities
+
+				function onLauncherChanged(): void {
+					if (root.visibilities.launcher)
+					{
+						input.focus = true;
+						input.forceActiveFocus();
+					}
+					else 
+					{
+						input.text = "";
+					}
+				}
+			}
 
 			TextField
 			{
 				id: input
-				//width: 500
-
 				font.family: Appearance.font.family.sans
 				font.pointSize: Appearance.font.size.smaller
 				leftInset: -10
+				implicitWidth: bg.implicitWidth
+				implicitHeight: bg.implicitHeight
+				leftPadding: 28
+				activeFocusOnTab: true
 
 				background: 
 				Rectangle{
+					id: bg
 					antialiasing: true
 					color: "transparent"
 					border.width: 2
-					border.color: "#33ffffff"
+					border.color: !input.focus ? "#55ffffff" : "#ff9966"
 					implicitWidth: 500
 					implicitHeight: 42
 					radius: 4
+
+					Behavior on border.color
+					{
+						ColorAnimation 
+						{
+							duration: Appearance.anim.durations.normal
+							easing.type: Easing.BezierSpline
+							easing.bezierCurve: Appearance.anim.curves.standard
+						}
+					}
+
+					Row
+					{
+						anchors.verticalCenter: parent.verticalCenter
+
+						WrapperItem
+						{
+							leftMargin: 5
+							topMargin: 2
+
+							MaterialIcon
+							{
+								text: "search"
+								//color: !input.focus ? "#55ffffff" : "#bbffffff"
+								color: !input.focus ? "#55ffffff" : "#ff9966"
+								font.pointSize: 24
+
+								Behavior on color
+								{
+									ColorAnimation 
+									{
+										duration: Appearance.anim.durations.normal
+										easing.type: Easing.BezierSpline
+										easing.bezierCurve: Appearance.anim.curves.standard
+									}
+								}
+							}
+						}
+					}
 				}
-				
+
 				color: "#dddddd"
 				renderType: TextField.NativeRendering
-				
-				placeholderText: "> "
-				placeholderTextColor: "#55dddddd"
-				
+
 				onTextEdited:
 				{
 					root.apps = DesktopEntries.applications.values.filter(a => a.name.includes(input.text));
-				}
-
-				onAccepted:
-				{
-					apps[selectedIndex].execute();
-					root.active = false;
 				}
 
 				Keys.onPressed: event => {
 
 					if (event.key == Qt.Key_Escape)
 					{
-						root.active = false;
+						root.visibilities.launcher = false;
 					}
+
 
 					if (event.key == Qt.Key_Down)
 					{
-						if(selectedIndex < apps.length)
-						{
-							root.selectedIndex++;
-						}
+						listView.forceActiveFocus();
 					}
-
-					if (event.key == Qt.Key_Up)
-					{
-						if(selectedIndex > 0)
-						{
-							root.selectedIndex--;
-						}
-					}
-
 				}
 			}
 
 		}
 
-		Repeater
+		ListView	
 		{
+			id: listView
 			model: root.apps
+			width: input.implicitWidth
+			height: root.implicitHeight - input.height - 40
+			anchors.horizontalCenter: parent.horizontalCenter
+			activeFocusOnTab: true
 
+
+			focus: true
+			delegate: 
 			WrapperRectangle
 			{
-				required property int index
-				topMargin: 10
+				property int index
+				topMargin: 16
 				leftMargin: 10
-				color: index == root.selectedIndex ? Config.altUIBgColor : "transparent"
+				color: ListView.isCurrentItem ? Config.altUIBgColor : "transparent"
 				radius: 4
 				height: 32
-				//width: root.implicitWidth - 2 * PanelsConf.launcher.paddingH
-				width: input.implicitWidth + 10
+				width: input.implicitWidth - 15
+
+				Behavior on color
+				{
+					ColorAnimation 
+					{
+						duration: Appearance.anim.durations.small
+						easing.type: Easing.BezierSpline
+						easing.bezierCurve: Appearance.anim.curves.standard
+					}
+				}
 
 				Text
 				{
@@ -123,11 +192,83 @@ Item
 					font.family: Appearance.font.family.sans
 					font.pointSize: Appearance.font.size.smaller
 					color: "#dddddd"
-					text: root.apps[index].name
+					text: name
 					anchors.verticalCenter: parent.verticalCenter
 				}
+
+			}
+
+			ScrollBar.vertical:
+			ScrollBar
+			{
+				policy: ScrollBar.AlwaysOn
+				anchors.right: parent.right
+			}
+
+			Keys.onPressed: event => {
+
+				if (event.key == Qt.Key_Escape)
+				{
+					root.visibilities.launcher = false;
+				}
+
+				if (event.key == Qt.Key_Return)
+				{
+					root.apps[listView.currentIndex].execute();
+					root.visibilities.launcher = false;
+				}
+
+				if (event.key == Qt.Key_Up)
+				{
+					if(listView.currentIndex == 0)
+					{
+						input.forceActiveFocus();
+					}
+				}
+
 			}
 		}
+
+	}
+
+	property int animLength: Appearance.anim.durations.normal
+	property list<real> animCurve: Appearance.anim.curves.emphasized
+
+	Behavior on x
+	{
+		enabled: root.implicitHeight > 0
+		Anim {}
+	}
+
+	Behavior on y
+	{
+		Anim {}
+	}
+
+	Behavior on implicitWidth 
+	{
+		enabled: root.implicitHeight > 0
+		Anim {
+			duration: root.animLength
+			easing.bezierCurve: root.animCurve
+		}
+	}
+
+	Behavior on implicitHeight 
+	{
+
+		Anim 
+		{
+			duration: root.animLength
+			easing.bezierCurve: root.animCurve
+		}
+	}
+
+	component Anim: NumberAnimation 
+	{
+		duration: Appearance.anim.durations.normal
+		easing.type: Easing.BezierSpline
+		easing.bezierCurve: Appearance.anim.curves.emphasized
 	}
 }
 
