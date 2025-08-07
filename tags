@@ -15,6 +15,16 @@
 !_TAG_KIND_DESCRIPTION!CSS	s,selector	/selectors/
 !_TAG_KIND_DESCRIPTION!Iniconf	k,key	/keys/
 !_TAG_KIND_DESCRIPTION!Iniconf	s,section	/sections/
+!_TAG_KIND_DESCRIPTION!JavaScript	C,constant	/constants/
+!_TAG_KIND_DESCRIPTION!JavaScript	G,getter	/getters/
+!_TAG_KIND_DESCRIPTION!JavaScript	M,field	/fields/
+!_TAG_KIND_DESCRIPTION!JavaScript	S,setter	/setters/
+!_TAG_KIND_DESCRIPTION!JavaScript	c,class	/classes/
+!_TAG_KIND_DESCRIPTION!JavaScript	f,function	/functions/
+!_TAG_KIND_DESCRIPTION!JavaScript	g,generator	/generators/
+!_TAG_KIND_DESCRIPTION!JavaScript	m,method	/methods/
+!_TAG_KIND_DESCRIPTION!JavaScript	p,property	/properties/
+!_TAG_KIND_DESCRIPTION!JavaScript	v,variable	/global variables/
 !_TAG_KIND_DESCRIPTION!Markdown	S,subsection	/level 2 sections/
 !_TAG_KIND_DESCRIPTION!Markdown	T,l4subsection	/level 4 sections/
 !_TAG_KIND_DESCRIPTION!Markdown	c,chapter	/chapters/
@@ -37,6 +47,7 @@
 !_TAG_OUTPUT_VERSION	1.1	/current.age/
 !_TAG_PARSER_VERSION!CSS	0.0	/current.age/
 !_TAG_PARSER_VERSION!Iniconf	0.0	/current.age/
+!_TAG_PARSER_VERSION!JavaScript	1.1	/current.age/
 !_TAG_PARSER_VERSION!Markdown	1.1	/current.age/
 !_TAG_PARSER_VERSION!Vim	1.1	/current.age/
 !_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
@@ -45,6 +56,7 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	6.2.0	/v6.2.0/
+!_TAG_ROLE_DESCRIPTION!JavaScript!function	foreigndecl	/declared in foreign languages/
 #entry:selected	wofi/style.css	/^#entry:selected {$/;"	i
 #entry:selected #text	wofi/style.css	/^#entry:selected #text {$/;"	i
 #inner-box	wofi/style.css	/^#inner-box {$/;"	i
@@ -52,17 +64,252 @@
 #outer-box	wofi/style.css	/^#outer-box {$/;"	i
 #scroll	wofi/style.css	/^#scroll {$/;"	i
 #text	wofi/style.css	/^#text {$/;"	i
+216	quickshell/utils/scripts/fzf.js	/^	216: "O",$/;"	p	variable:normalized
+223	quickshell/utils/scripts/fzf.js	/^	223: "s",$/;"	p	variable:normalized
+248	quickshell/utils/scripts/fzf.js	/^	248: "o",$/;"	p	variable:normalized
+273	quickshell/utils/scripts/fzf.js	/^	273: "d",$/;"	p	variable:normalized
+295	quickshell/utils/scripts/fzf.js	/^	295: "h",$/;"	p	variable:normalized
+305	quickshell/utils/scripts/fzf.js	/^	305: "i",$/;"	p	variable:normalized
+320	quickshell/utils/scripts/fzf.js	/^	320: "l",$/;"	p	variable:normalized
+322	quickshell/utils/scripts/fzf.js	/^	322: "l",$/;"	p	variable:normalized
+359	quickshell/utils/scripts/fzf.js	/^	359: "t",$/;"	p	variable:normalized
+383	quickshell/utils/scripts/fzf.js	/^	383: "s",$/;"	p	variable:normalized
+384	quickshell/utils/scripts/fzf.js	/^	384: "b",$/;"	p	variable:normalized
+385	quickshell/utils/scripts/fzf.js	/^	385: "B",$/;"	p	variable:normalized
+387	quickshell/utils/scripts/fzf.js	/^	387: "b",$/;"	p	variable:normalized
+390	quickshell/utils/scripts/fzf.js	/^	390: "O",$/;"	p	variable:normalized
+392	quickshell/utils/scripts/fzf.js	/^	392: "c",$/;"	p	variable:normalized
+393	quickshell/utils/scripts/fzf.js	/^	393: "D",$/;"	p	variable:normalized
+394	quickshell/utils/scripts/fzf.js	/^	394: "D",$/;"	p	variable:normalized
+396	quickshell/utils/scripts/fzf.js	/^	396: "d",$/;"	p	variable:normalized
+398	quickshell/utils/scripts/fzf.js	/^	398: "E",$/;"	p	variable:normalized
+400	quickshell/utils/scripts/fzf.js	/^	400: "E",$/;"	p	variable:normalized
+402	quickshell/utils/scripts/fzf.js	/^	402: "f",$/;"	p	variable:normalized
+403	quickshell/utils/scripts/fzf.js	/^	403: "G",$/;"	p	variable:normalized
+407	quickshell/utils/scripts/fzf.js	/^	407: "I",$/;"	p	variable:normalized
+409	quickshell/utils/scripts/fzf.js	/^	409: "k",$/;"	p	variable:normalized
+410	quickshell/utils/scripts/fzf.js	/^	410: "l",$/;"	p	variable:normalized
+412	quickshell/utils/scripts/fzf.js	/^	412: "M",$/;"	p	variable:normalized
+413	quickshell/utils/scripts/fzf.js	/^	413: "N",$/;"	p	variable:normalized
+414	quickshell/utils/scripts/fzf.js	/^	414: "n",$/;"	p	variable:normalized
+415	quickshell/utils/scripts/fzf.js	/^	415: "O",$/;"	p	variable:normalized
+421	quickshell/utils/scripts/fzf.js	/^	421: "p",$/;"	p	variable:normalized
+427	quickshell/utils/scripts/fzf.js	/^	427: "t",$/;"	p	variable:normalized
+429	quickshell/utils/scripts/fzf.js	/^	429: "t",$/;"	p	variable:normalized
+430	quickshell/utils/scripts/fzf.js	/^	430: "T",$/;"	p	variable:normalized
+434	quickshell/utils/scripts/fzf.js	/^	434: "V",$/;"	p	variable:normalized
+436	quickshell/utils/scripts/fzf.js	/^	436: "y",$/;"	p	variable:normalized
+438	quickshell/utils/scripts/fzf.js	/^	438: "z",$/;"	p	variable:normalized
+477	quickshell/utils/scripts/fzf.js	/^	477: "e",$/;"	p	variable:normalized
+485	quickshell/utils/scripts/fzf.js	/^	485: "g",$/;"	p	variable:normalized
+544	quickshell/utils/scripts/fzf.js	/^	544: "N",$/;"	p	variable:normalized
+545	quickshell/utils/scripts/fzf.js	/^	545: "d",$/;"	p	variable:normalized
+549	quickshell/utils/scripts/fzf.js	/^	549: "z",$/;"	p	variable:normalized
+564	quickshell/utils/scripts/fzf.js	/^	564: "l",$/;"	p	variable:normalized
+565	quickshell/utils/scripts/fzf.js	/^	565: "n",$/;"	p	variable:normalized
+566	quickshell/utils/scripts/fzf.js	/^	566: "t",$/;"	p	variable:normalized
+567	quickshell/utils/scripts/fzf.js	/^	567: "j",$/;"	p	variable:normalized
+570	quickshell/utils/scripts/fzf.js	/^	570: "A",$/;"	p	variable:normalized
+571	quickshell/utils/scripts/fzf.js	/^	571: "C",$/;"	p	variable:normalized
+572	quickshell/utils/scripts/fzf.js	/^	572: "c",$/;"	p	variable:normalized
+573	quickshell/utils/scripts/fzf.js	/^	573: "L",$/;"	p	variable:normalized
+574	quickshell/utils/scripts/fzf.js	/^	574: "T",$/;"	p	variable:normalized
+575	quickshell/utils/scripts/fzf.js	/^	575: "s",$/;"	p	variable:normalized
+576	quickshell/utils/scripts/fzf.js	/^	576: "z",$/;"	p	variable:normalized
+579	quickshell/utils/scripts/fzf.js	/^	579: "B",$/;"	p	variable:normalized
+580	quickshell/utils/scripts/fzf.js	/^	580: "U",$/;"	p	variable:normalized
+581	quickshell/utils/scripts/fzf.js	/^	581: "V",$/;"	p	variable:normalized
+582	quickshell/utils/scripts/fzf.js	/^	582: "E",$/;"	p	variable:normalized
+583	quickshell/utils/scripts/fzf.js	/^	583: "e",$/;"	p	variable:normalized
+584	quickshell/utils/scripts/fzf.js	/^	584: "J",$/;"	p	variable:normalized
+585	quickshell/utils/scripts/fzf.js	/^	585: "j",$/;"	p	variable:normalized
+586	quickshell/utils/scripts/fzf.js	/^	586: "Q",$/;"	p	variable:normalized
+587	quickshell/utils/scripts/fzf.js	/^	587: "q",$/;"	p	variable:normalized
+588	quickshell/utils/scripts/fzf.js	/^	588: "R",$/;"	p	variable:normalized
+589	quickshell/utils/scripts/fzf.js	/^	589: "r",$/;"	p	variable:normalized
+590	quickshell/utils/scripts/fzf.js	/^	590: "Y",$/;"	p	variable:normalized
+591	quickshell/utils/scripts/fzf.js	/^	591: "y",$/;"	p	variable:normalized
+592	quickshell/utils/scripts/fzf.js	/^	592: "a",$/;"	p	variable:normalized
+593	quickshell/utils/scripts/fzf.js	/^	593: "a",$/;"	p	variable:normalized
+595	quickshell/utils/scripts/fzf.js	/^	595: "b",$/;"	p	variable:normalized
+596	quickshell/utils/scripts/fzf.js	/^	596: "o",$/;"	p	variable:normalized
+597	quickshell/utils/scripts/fzf.js	/^	597: "c",$/;"	p	variable:normalized
+598	quickshell/utils/scripts/fzf.js	/^	598: "d",$/;"	p	variable:normalized
+599	quickshell/utils/scripts/fzf.js	/^	599: "d",$/;"	p	variable:normalized
+600	quickshell/utils/scripts/fzf.js	/^	600: "e",$/;"	p	variable:normalized
+603	quickshell/utils/scripts/fzf.js	/^	603: "e",$/;"	p	variable:normalized
+604	quickshell/utils/scripts/fzf.js	/^	604: "e",$/;"	p	variable:normalized
+605	quickshell/utils/scripts/fzf.js	/^	605: "e",$/;"	p	variable:normalized
+606	quickshell/utils/scripts/fzf.js	/^	606: "e",$/;"	p	variable:normalized
+607	quickshell/utils/scripts/fzf.js	/^	607: "j",$/;"	p	variable:normalized
+608	quickshell/utils/scripts/fzf.js	/^	608: "g",$/;"	p	variable:normalized
+609	quickshell/utils/scripts/fzf.js	/^	609: "g",$/;"	p	variable:normalized
+610	quickshell/utils/scripts/fzf.js	/^	610: "G",$/;"	p	variable:normalized
+613	quickshell/utils/scripts/fzf.js	/^	613: "h",$/;"	p	variable:normalized
+614	quickshell/utils/scripts/fzf.js	/^	614: "h",$/;"	p	variable:normalized
+616	quickshell/utils/scripts/fzf.js	/^	616: "i",$/;"	p	variable:normalized
+618	quickshell/utils/scripts/fzf.js	/^	618: "I",$/;"	p	variable:normalized
+619	quickshell/utils/scripts/fzf.js	/^	619: "l",$/;"	p	variable:normalized
+620	quickshell/utils/scripts/fzf.js	/^	620: "l",$/;"	p	variable:normalized
+621	quickshell/utils/scripts/fzf.js	/^	621: "l",$/;"	p	variable:normalized
+623	quickshell/utils/scripts/fzf.js	/^	623: "m",$/;"	p	variable:normalized
+624	quickshell/utils/scripts/fzf.js	/^	624: "m",$/;"	p	variable:normalized
+625	quickshell/utils/scripts/fzf.js	/^	625: "m",$/;"	p	variable:normalized
+626	quickshell/utils/scripts/fzf.js	/^	626: "n",$/;"	p	variable:normalized
+627	quickshell/utils/scripts/fzf.js	/^	627: "n",$/;"	p	variable:normalized
+628	quickshell/utils/scripts/fzf.js	/^	628: "N",$/;"	p	variable:normalized
+629	quickshell/utils/scripts/fzf.js	/^	629: "o",$/;"	p	variable:normalized
+633	quickshell/utils/scripts/fzf.js	/^	633: "r",$/;"	p	variable:normalized
+634	quickshell/utils/scripts/fzf.js	/^	634: "r",$/;"	p	variable:normalized
+635	quickshell/utils/scripts/fzf.js	/^	635: "r",$/;"	p	variable:normalized
+636	quickshell/utils/scripts/fzf.js	/^	636: "r",$/;"	p	variable:normalized
+637	quickshell/utils/scripts/fzf.js	/^	637: "r",$/;"	p	variable:normalized
+638	quickshell/utils/scripts/fzf.js	/^	638: "r",$/;"	p	variable:normalized
+639	quickshell/utils/scripts/fzf.js	/^	639: "r",$/;"	p	variable:normalized
+640	quickshell/utils/scripts/fzf.js	/^	640: "R",$/;"	p	variable:normalized
+641	quickshell/utils/scripts/fzf.js	/^	641: "R",$/;"	p	variable:normalized
+642	quickshell/utils/scripts/fzf.js	/^	642: "s",$/;"	p	variable:normalized
+647	quickshell/utils/scripts/fzf.js	/^	647: "t",$/;"	p	variable:normalized
+648	quickshell/utils/scripts/fzf.js	/^	648: "t",$/;"	p	variable:normalized
+649	quickshell/utils/scripts/fzf.js	/^	649: "u",$/;"	p	variable:normalized
+651	quickshell/utils/scripts/fzf.js	/^	651: "v",$/;"	p	variable:normalized
+652	quickshell/utils/scripts/fzf.js	/^	652: "v",$/;"	p	variable:normalized
+653	quickshell/utils/scripts/fzf.js	/^	653: "w",$/;"	p	variable:normalized
+654	quickshell/utils/scripts/fzf.js	/^	654: "y",$/;"	p	variable:normalized
+655	quickshell/utils/scripts/fzf.js	/^	655: "Y",$/;"	p	variable:normalized
+656	quickshell/utils/scripts/fzf.js	/^	656: "z",$/;"	p	variable:normalized
+657	quickshell/utils/scripts/fzf.js	/^	657: "z",$/;"	p	variable:normalized
+663	quickshell/utils/scripts/fzf.js	/^	663: "c",$/;"	p	variable:normalized
+665	quickshell/utils/scripts/fzf.js	/^	665: "B",$/;"	p	variable:normalized
+666	quickshell/utils/scripts/fzf.js	/^	666: "e",$/;"	p	variable:normalized
+667	quickshell/utils/scripts/fzf.js	/^	667: "G",$/;"	p	variable:normalized
+668	quickshell/utils/scripts/fzf.js	/^	668: "H",$/;"	p	variable:normalized
+669	quickshell/utils/scripts/fzf.js	/^	669: "j",$/;"	p	variable:normalized
+670	quickshell/utils/scripts/fzf.js	/^	670: "k",$/;"	p	variable:normalized
+671	quickshell/utils/scripts/fzf.js	/^	671: "L",$/;"	p	variable:normalized
+672	quickshell/utils/scripts/fzf.js	/^	672: "q",$/;"	p	variable:normalized
+686	quickshell/utils/scripts/fzf.js	/^	686: "h",$/;"	p	variable:normalized
+7424	quickshell/utils/scripts/fzf.js	/^	7424: "A",$/;"	p	variable:normalized
+7427	quickshell/utils/scripts/fzf.js	/^	7427: "B",$/;"	p	variable:normalized
+7428	quickshell/utils/scripts/fzf.js	/^	7428: "C",$/;"	p	variable:normalized
+7429	quickshell/utils/scripts/fzf.js	/^	7429: "D",$/;"	p	variable:normalized
+7431	quickshell/utils/scripts/fzf.js	/^	7431: "E",$/;"	p	variable:normalized
+7432	quickshell/utils/scripts/fzf.js	/^	7432: "e",$/;"	p	variable:normalized
+7433	quickshell/utils/scripts/fzf.js	/^	7433: "i",$/;"	p	variable:normalized
+7434	quickshell/utils/scripts/fzf.js	/^	7434: "J",$/;"	p	variable:normalized
+7435	quickshell/utils/scripts/fzf.js	/^	7435: "K",$/;"	p	variable:normalized
+7436	quickshell/utils/scripts/fzf.js	/^	7436: "L",$/;"	p	variable:normalized
+7437	quickshell/utils/scripts/fzf.js	/^	7437: "M",$/;"	p	variable:normalized
+7438	quickshell/utils/scripts/fzf.js	/^	7438: "N",$/;"	p	variable:normalized
+7439	quickshell/utils/scripts/fzf.js	/^	7439: "O",$/;"	p	variable:normalized
+7440	quickshell/utils/scripts/fzf.js	/^	7440: "O",$/;"	p	variable:normalized
+7441	quickshell/utils/scripts/fzf.js	/^	7441: "o",$/;"	p	variable:normalized
+7442	quickshell/utils/scripts/fzf.js	/^	7442: "o",$/;"	p	variable:normalized
+7443	quickshell/utils/scripts/fzf.js	/^	7443: "o",$/;"	p	variable:normalized
+7446	quickshell/utils/scripts/fzf.js	/^	7446: "o",$/;"	p	variable:normalized
+7447	quickshell/utils/scripts/fzf.js	/^	7447: "o",$/;"	p	variable:normalized
+7448	quickshell/utils/scripts/fzf.js	/^	7448: "P",$/;"	p	variable:normalized
+7449	quickshell/utils/scripts/fzf.js	/^	7449: "R",$/;"	p	variable:normalized
+7450	quickshell/utils/scripts/fzf.js	/^	7450: "R",$/;"	p	variable:normalized
+7451	quickshell/utils/scripts/fzf.js	/^	7451: "T",$/;"	p	variable:normalized
+7452	quickshell/utils/scripts/fzf.js	/^	7452: "U",$/;"	p	variable:normalized
+7453	quickshell/utils/scripts/fzf.js	/^	7453: "u",$/;"	p	variable:normalized
+7454	quickshell/utils/scripts/fzf.js	/^	7454: "u",$/;"	p	variable:normalized
+7455	quickshell/utils/scripts/fzf.js	/^	7455: "m",$/;"	p	variable:normalized
+7456	quickshell/utils/scripts/fzf.js	/^	7456: "V",$/;"	p	variable:normalized
+7457	quickshell/utils/scripts/fzf.js	/^	7457: "W",$/;"	p	variable:normalized
+7458	quickshell/utils/scripts/fzf.js	/^	7458: "Z",$/;"	p	variable:normalized
+7522	quickshell/utils/scripts/fzf.js	/^	7522: "i",$/;"	p	variable:normalized
+7523	quickshell/utils/scripts/fzf.js	/^	7523: "r",$/;"	p	variable:normalized
+7524	quickshell/utils/scripts/fzf.js	/^	7524: "u",$/;"	p	variable:normalized
+7525	quickshell/utils/scripts/fzf.js	/^	7525: "v",$/;"	p	variable:normalized
+7834	quickshell/utils/scripts/fzf.js	/^	7834: "a",$/;"	p	variable:normalized
+7835	quickshell/utils/scripts/fzf.js	/^	7835: "s",$/;"	p	variable:normalized
+8305	quickshell/utils/scripts/fzf.js	/^	8305: "i",$/;"	p	variable:normalized
+8341	quickshell/utils/scripts/fzf.js	/^	8341: "h",$/;"	p	variable:normalized
+8342	quickshell/utils/scripts/fzf.js	/^	8342: "k",$/;"	p	variable:normalized
+8343	quickshell/utils/scripts/fzf.js	/^	8343: "l",$/;"	p	variable:normalized
+8344	quickshell/utils/scripts/fzf.js	/^	8344: "m",$/;"	p	variable:normalized
+8345	quickshell/utils/scripts/fzf.js	/^	8345: "n",$/;"	p	variable:normalized
+8346	quickshell/utils/scripts/fzf.js	/^	8346: "p",$/;"	p	variable:normalized
+8347	quickshell/utils/scripts/fzf.js	/^	8347: "s",$/;"	p	variable:normalized
+8348	quickshell/utils/scripts/fzf.js	/^	8348: "t",$/;"	p	variable:normalized
+8580	quickshell/utils/scripts/fzf.js	/^	8580: "c"$/;"	p	variable:normalized
+867	quickshell/utils/scripts/fzf.js	/^	867: "a",$/;"	p	variable:normalized
+868	quickshell/utils/scripts/fzf.js	/^	868: "e",$/;"	p	variable:normalized
+869	quickshell/utils/scripts/fzf.js	/^	869: "i",$/;"	p	variable:normalized
+870	quickshell/utils/scripts/fzf.js	/^	870: "o",$/;"	p	variable:normalized
+871	quickshell/utils/scripts/fzf.js	/^	871: "u",$/;"	p	variable:normalized
+872	quickshell/utils/scripts/fzf.js	/^	872: "c",$/;"	p	variable:normalized
+873	quickshell/utils/scripts/fzf.js	/^	873: "d",$/;"	p	variable:normalized
+874	quickshell/utils/scripts/fzf.js	/^	874: "h",$/;"	p	variable:normalized
+875	quickshell/utils/scripts/fzf.js	/^	875: "m",$/;"	p	variable:normalized
+876	quickshell/utils/scripts/fzf.js	/^	876: "r",$/;"	p	variable:normalized
+877	quickshell/utils/scripts/fzf.js	/^	877: "t",$/;"	p	variable:normalized
+878	quickshell/utils/scripts/fzf.js	/^	878: "v",$/;"	p	variable:normalized
+879	quickshell/utils/scripts/fzf.js	/^	879: "x",$/;"	p	variable:normalized
 <C-H>	nvim/init.vim	/^map <C-H> :sp<CR>$/;"	m
 <C-S>	nvim/init.vim	/^map <C-S> :vs<CR>$/;"	m
 <C-down>	nvim/init.vim	/^map <C-down> 	<C-w>j$/;"	m
 <C-left>	nvim/init.vim	/^map <C-left> 	<C-w>h$/;"	m
 <C-right>	nvim/init.vim	/^map <C-right> 	<C-w>l$/;"	m
 <C-up>	nvim/init.vim	/^map <C-up> 	<C-w>k$/;"	m
+Array	quickshell/utils/scripts/fuzzysort.js	/^class KeysResult extends Array {$/;"	M	class:Result
+BONUS_BOUNDARY	quickshell/utils/scripts/fzf.js	/^const SCORE_MATCH = 16, SCORE_GAP_START = -3, SCORE_GAP_EXTENTION = -1, BONUS_BOUNDARY = SCORE_M/;"	C
+BONUS_CAMEL_123	quickshell/utils/scripts/fzf.js	/^const SCORE_MATCH = 16, SCORE_GAP_START = -3, SCORE_GAP_EXTENTION = -1, BONUS_BOUNDARY = SCORE_M/;"	C
+BONUS_CONSECUTIVE	quickshell/utils/scripts/fzf.js	/^const SCORE_MATCH = 16, SCORE_GAP_START = -3, SCORE_GAP_EXTENTION = -1, BONUS_BOUNDARY = SCORE_M/;"	C
+BONUS_FIRST_CHAR_MULTIPLIER	quickshell/utils/scripts/fzf.js	/^const SCORE_MATCH = 16, SCORE_GAP_START = -3, SCORE_GAP_EXTENTION = -1, BONUS_BOUNDARY = SCORE_M/;"	C
+BONUS_NON_WORD	quickshell/utils/scripts/fzf.js	/^const SCORE_MATCH = 16, SCORE_GAP_START = -3, SCORE_GAP_EXTENTION = -1, BONUS_BOUNDARY = SCORE_M/;"	C
+CAPITAL_A_RUNE	quickshell/utils/scripts/fzf.js	/^const CAPITAL_A_RUNE = "A".codePointAt(0);$/;"	C
+CAPITAL_Z_RUNE	quickshell/utils/scripts/fzf.js	/^const CAPITAL_Z_RUNE = "Z".codePointAt(0);$/;"	C
+Finder	quickshell/utils/scripts/fzf.js	/^class Finder {$/;"	c
+INFINITY	quickshell/utils/scripts/fuzzysort.js	/^var INFINITY = Infinity; var NEGATIVE_INFINITY = -INFINITY$/;"	v
+KeysResult	quickshell/utils/scripts/fuzzysort.js	/^class KeysResult extends Array {$/;"	M	class:Result
 LightlineGutentags	nvim/init.vim	/^function! LightlineGutentags()$/;"	f
 LightlineRWStat	nvim/init.vim	/^function! LightlineRWStat()$/;"	f
+MAX_ASCII	quickshell/utils/scripts/fzf.js	/^const MAX_ASCII = "\\x7F".codePointAt(0);$/;"	C
+NEGATIVE_INFINITY	quickshell/utils/scripts/fuzzysort.js	/^var INFINITY = Infinity; var NEGATIVE_INFINITY = -INFINITY$/;"	v
+NULL	quickshell/utils/scripts/fuzzysort.js	/^var NULL = null$/;"	v
+NUMERAL_NINE_RUNE	quickshell/utils/scripts/fzf.js	/^const NUMERAL_NINE_RUNE = "9".codePointAt(0);$/;"	C
+NUMERAL_ZERO_RUNE	quickshell/utils/scripts/fzf.js	/^const NUMERAL_ZERO_RUNE = "0".codePointAt(0);$/;"	C
+Result	quickshell/utils/scripts/fuzzysort.js	/^class Result {$/;"	c
+SCORE_GAP_EXTENTION	quickshell/utils/scripts/fzf.js	/^const SCORE_MATCH = 16, SCORE_GAP_START = -3, SCORE_GAP_EXTENTION = -1, BONUS_BOUNDARY = SCORE_M/;"	C
+SCORE_GAP_START	quickshell/utils/scripts/fzf.js	/^const SCORE_MATCH = 16, SCORE_GAP_START = -3, SCORE_GAP_EXTENTION = -1, BONUS_BOUNDARY = SCORE_M/;"	C
+SCORE_MATCH	quickshell/utils/scripts/fzf.js	/^const SCORE_MATCH = 16, SCORE_GAP_START = -3, SCORE_GAP_EXTENTION = -1, BONUS_BOUNDARY = SCORE_M/;"	C
+SLAB_16_SIZE	quickshell/utils/scripts/fzf.js	/^const SLAB_16_SIZE = 100 * 1024;$/;"	C
+SLAB_32_SIZE	quickshell/utils/scripts/fzf.js	/^const SLAB_32_SIZE = 2048;$/;"	C
+SMALL_A_RUNE	quickshell/utils/scripts/fzf.js	/^const SMALL_A_RUNE = "a".codePointAt(0);$/;"	C
+SMALL_Z_RUNE	quickshell/utils/scripts/fzf.js	/^const SMALL_Z_RUNE = "z".codePointAt(0);$/;"	C
+TermType	quickshell/utils/scripts/fzf.js	/^var TermType = \/* @__PURE__ *\/ ((TermType2) => {$/;"	v
+[0]	quickshell/utils/scripts/fzf.js	/^	[0]: fuzzyMatchV2,$/;"	p	variable:termTypeMap
+[1]	quickshell/utils/scripts/fzf.js	/^	[1]: exactMatchNaive,$/;"	p	variable:termTypeMap
+[2]	quickshell/utils/scripts/fzf.js	/^	[2]: prefixMatch,$/;"	p	variable:termTypeMap
+[3]	quickshell/utils/scripts/fzf.js	/^	[3]: suffixMatch,$/;"	p	variable:termTypeMap
+[4]	quickshell/utils/scripts/fzf.js	/^	[4]: equalMatch$/;"	p	variable:termTypeMap
+_bitflags	quickshell/utils/scripts/fuzzysort.js	/^    return new_result(target, {_targetLower:info._lower, _targetLowerCodes:info.lowerCodes, _bit/;"	p	variable:prepare.anonymousObjectbffade1b0105
+_lower	quickshell/utils/scripts/fuzzysort.js	/^        spaceSearches.push({lowerCodes:_info.lowerCodes, _lower:searches[i].toLowerCase(), conta/;"	p	variable:anonymousObjectbffade1b0205
+_score	quickshell/utils/scripts/fuzzysort.js	/^        var result = new_result(target.target, {_score: target._score, obj: obj})$/;"	p	variable:all.anonymousObjectbffade1b0305
+_targetLower	quickshell/utils/scripts/fuzzysort.js	/^    return new_result(target, {_targetLower:info._lower, _targetLowerCodes:info.lowerCodes, _bit/;"	p	variable:prepare.anonymousObjectbffade1b0105
+_targetLowerCodes	quickshell/utils/scripts/fuzzysort.js	/^    return new_result(target, {_targetLower:info._lower, _targetLowerCodes:info.lowerCodes, _bit/;"	p	variable:prepare.anonymousObjectbffade1b0105
+a	quickshell/utils/scripts/fzf.js	/^	a: [7844, 7863],$/;"	p	variable:ranges
+algorithm	quickshell/utils/scripts/fuzzysort.js	/^var algorithm = (preparedSearch, prepared, allowSpaces=false, allowPartialMatch=false) => {$/;"	f
+algorithmSpaces	quickshell/utils/scripts/fuzzysort.js	/^var algorithmSpaces = (preparedSearch, target, allowPartialMatch) => {$/;"	f
+all	quickshell/utils/scripts/fuzzysort.js	/^var all = (targets, options) => {$/;"	f
+alloc16	quickshell/utils/scripts/fzf.js	/^function alloc16(offset, slab2, size) {$/;"	f
+alloc32	quickshell/utils/scripts/fzf.js	/^function alloc32(offset, slab2, size) {$/;"	f
+allowPartialMatchScores	quickshell/utils/scripts/fuzzysort.js	/^var keysSpacesBestScores = []; var allowPartialMatchScores = []$/;"	v
 animation	hypr/hyprland.conf	/^animation = workspacesIn, 1, 8, default, slide$/;"	k
 animation	hypr/hyprland.conf	/^animation = workspacesOut, 1, 8, default, slide$/;"	k
+anonymousObject58072e910205	quickshell/utils/scripts/fzf.js	/^			set.push({$/;"	v
+anonymousObject58072e910305	quickshell/utils/scripts/fzf.js	/^		{$/;"	v	function:computeExtendedMatch
+anonymousObject58072e910405	quickshell/utils/scripts/fzf.js	/^		scoreMap[scoreKey].push(Object.assign({$/;"	v
+anonymousObject58072e910505	quickshell/utils/scripts/fzf.js	/^		scoreMap[scoreKey].push({$/;"	v
+anonymousObjectbffade1b0105	quickshell/utils/scripts/fuzzysort.js	/^    return new_result(target, {_targetLower:info._lower, _targetLowerCodes:info.lowerCodes, _bit/;"	v	function:prepare
+anonymousObjectbffade1b0205	quickshell/utils/scripts/fuzzysort.js	/^        spaceSearches.push({lowerCodes:_info.lowerCodes, _lower:searches[i].toLowerCase(), conta/;"	v
+anonymousObjectbffade1b0305	quickshell/utils/scripts/fuzzysort.js	/^        var result = new_result(target.target, {_score: target._score, obj: obj})$/;"	v	function:all
+asciiFuzzyIndex	quickshell/utils/scripts/fzf.js	/^function asciiFuzzyIndex(input, pattern, caseSensitive) {$/;"	f
 ayucolor	nvim/init.vim	/^let ayucolor="dark"   " for dark version of theme$/;"	v
+basicMatch	quickshell/utils/scripts/fzf.js	/^function basicMatch(query) {$/;"	f
 bind	hypr/hyprland.conf	/^bind = $mainMod  SHIFT, Q, killactive,$/;"	k
 bind	hypr/hyprland.conf	/^bind = $mainMod SHIFT, 0, movetoworkspace, 10$/;"	k
 bind	hypr/hyprland.conf	/^bind = $mainMod SHIFT, 1, movetoworkspace, 1$/;"	k
@@ -111,24 +358,137 @@ bindl	hypr/hyprland.conf	/^bindl = , XF86AudioPlay, exec, playerctl play-pause$/
 bindl	hypr/hyprland.conf	/^bindl = , XF86AudioPrev, exec, playerctl previous$/;"	k
 bindm	hypr/hyprland.conf	/^bindm = $mainMod, mouse:272, movewindow$/;"	k
 bindm	hypr/hyprland.conf	/^bindm = $mainMod, mouse:273, resizewindow$/;"	k
+bonusAt	quickshell/utils/scripts/fzf.js	/^function bonusAt(input, idx) {$/;"	f
+bonusFor	quickshell/utils/scripts/fzf.js	/^function bonusFor(prevClass, currClass) {$/;"	f
+buildPatternForBasicMatch	quickshell/utils/scripts/fzf.js	/^const buildPatternForBasicMatch = (query, casing, normalize) => {$/;"	f
+buildPatternForExtendedMatch	quickshell/utils/scripts/fzf.js	/^function buildPatternForExtendedMatch(fuzzy, caseMode, normalize, str) {$/;"	f
+byLengthAsc	quickshell/utils/scripts/fzf.js	/^function byLengthAsc(a, b, selector) {$/;"	f
+byStartAsc	quickshell/utils/scripts/fzf.js	/^function byStartAsc(a, b) {$/;"	f
+calculateScore	quickshell/utils/scripts/fuzzysort.js	/^    var calculateScore = matches => {$/;"	f	function:algorithm
+calculateScore	quickshell/utils/scripts/fzf.js	/^function calculateScore(caseSensitive, normalize, text, pattern, sidx, eidx, withPos) {$/;"	f
+caseSensitive	quickshell/utils/scripts/fzf.js	/^				caseSensitive,$/;"	p	variable:anonymousObject58072e910205
+charClassOf	quickshell/utils/scripts/fzf.js	/^function charClassOf(rune) {$/;"	f
+charClassOfAscii	quickshell/utils/scripts/fzf.js	/^function charClassOfAscii(rune) {$/;"	f
+charClassOfNonAscii	quickshell/utils/scripts/fzf.js	/^function charClassOfNonAscii(rune) {$/;"	f
+cleanup	quickshell/utils/scripts/fuzzysort.js	/^var cleanup = () => { preparedCache.clear(); preparedSearchCache.clear() }$/;"	f
+computeExtendedMatch	quickshell/utils/scripts/fzf.js	/^function computeExtendedMatch(text, pattern, fuzzyAlgo, forward) {$/;"	f
+constructor	quickshell/utils/scripts/fzf.js	/^	constructor(list, ...optionsTuple) {$/;"	m	class:Finder
+containsSpace	quickshell/utils/scripts/fuzzysort.js	/^        spaceSearches.push({lowerCodes:_info.lowerCodes, _lower:searches[i].toLowerCase(), conta/;"	p	variable:anonymousObjectbffade1b0205
+createPosSet	quickshell/utils/scripts/fzf.js	/^function createPosSet(withPos) {$/;"	f
+createResultItemWithEmptyPos	quickshell/utils/scripts/fzf.js	/^function createResultItemWithEmptyPos(item) {$/;"	f
+defaultOpts	quickshell/utils/scripts/fzf.js	/^const defaultOpts = {$/;"	v
+denormalizeScore	quickshell/utils/scripts/fuzzysort.js	/^var denormalizeScore = normalizedScore => {$/;"	f
+diacritic	quickshell/utils/scripts/fzf.js	/^	const diacritic = String.fromCodePoint(i);$/;"	C
 dotfiles	README.md	/^# dotfiles/;"	c
+e	quickshell/utils/scripts/fzf.js	/^	e: [7870, 7879],$/;"	p	variable:ranges
+end	quickshell/utils/scripts/fzf.js	/^			end: eidx$/;"	p	variable:anonymousObject58072e910505
+end	quickshell/utils/scripts/fzf.js	/^			end: maxScorePos + 1,$/;"	p	variable:fuzzyMatchV2.result
 env	hypr/hyprland.conf	/^env = HYPRCURSOR_SIZE,24$/;"	k
 env	hypr/hyprland.conf	/^env = XCURSOR_SIZE,24$/;"	k
+equalMatch	quickshell/utils/scripts/fzf.js	/^const equalMatch = (caseSensitive, normalize, forward, text, pattern, withPos, slab2) => {$/;"	f
+exactMatchNaive	quickshell/utils/scripts/fzf.js	/^const exactMatchNaive = (caseSensitive, normalize, forward, text, pattern, withPos, slab2) => {$/;"	f
 exec-once	hypr/hyprland.conf	/^exec-once = hyprpaper$/;"	k
 exec-once	hypr/hyprland.conf	/^exec-once = quickshell$/;"	k
+extendedMatch	quickshell/utils/scripts/fzf.js	/^function extendedMatch(query) {$/;"	f
+fastpriorityqueue	quickshell/utils/scripts/fuzzysort.js	/^var fastpriorityqueue=r=>{var e=[],o=0,a={},v=r=>{for(var a=0,v=e[a],c=1;c<o;){var s=c+1;a=c,s<o/;"	f
+find	quickshell/utils/scripts/fzf.js	/^	find(query) {$/;"	m	class:Finder
 font_family      family	kitty/kitty.conf	/^font_family      family="JetBrains Mono"$/;"	k
+fuzzyMatchV1	quickshell/utils/scripts/fzf.js	/^function fuzzyMatchV1(caseSensitive, normalize, forward, text, pattern, withPos, slab2) {$/;"	f
+fuzzyMatchV2	quickshell/utils/scripts/fzf.js	/^const fuzzyMatchV2 = (caseSensitive, normalize, forward, input, pattern, withPos, slab2) => {$/;"	f
 g:ale_linters	nvim/init.vim	/^let g:ale_linters = {'gcc' : ['gcc']}$/;"	v
 g:ale_linters_explicit	nvim/init.vim	/^let g:ale_linters_explicit = 1$/;"	v
 g:gutentags_project_root	nvim/init.vim	/^let g:gutentags_project_root = ['*.ioc', '.git', 'Makefile', "CMakeLists.txt" ]$/;"	v
 g:lightline	nvim/init.vim	/^let g:lightline = {$/;"	v
+getBasicMatchIter	quickshell/utils/scripts/fzf.js	/^function getBasicMatchIter(scoreMap, queryRunes, caseSensitive) {$/;"	f
+getExtendedMatchIter	quickshell/utils/scripts/fzf.js	/^function getExtendedMatchIter(scoreMap, pattern) {$/;"	f
+getPrepared	quickshell/utils/scripts/fuzzysort.js	/^var getPrepared = (target) => {$/;"	f
+getPreparedSearch	quickshell/utils/scripts/fuzzysort.js	/^var getPreparedSearch = (search) => {$/;"	f
+getResultFromScoreMap	quickshell/utils/scripts/fzf.js	/^function getResultFromScoreMap(scoreMap, limit) {$/;"	f
+getValue	quickshell/utils/scripts/fuzzysort.js	/^var getValue = (obj, prop) => {$/;"	f
+go	quickshell/utils/scripts/fuzzysort.js	/^var go = (search, targets, options) => {$/;"	f
+highlight	quickshell/utils/scripts/fuzzysort.js	/^var highlight = (result, open='<b>', close='<\/b>') => {$/;"	f
+indexAt	quickshell/utils/scripts/fzf.js	/^function indexAt(index, max, forward) {$/;"	f
+indexes	quickshell/utils/scripts/fuzzysort.js	/^    get ['indexes']() { return this._indexes.slice(0, this._indexes.len).sort((a,b)=>a-b) }$/;"	G	class:Result
+indexes	quickshell/utils/scripts/fuzzysort.js	/^    set ['indexes'](indexes) { return this._indexes = indexes }$/;"	S	class:Result
+inv	quickshell/utils/scripts/fzf.js	/^				inv,$/;"	p	variable:anonymousObject58072e910205
+isAscii	quickshell/utils/scripts/fzf.js	/^function isAscii(runes) {$/;"	f
+isPrepared	quickshell/utils/scripts/fuzzysort.js	/^var isPrepared = (x) => { return typeof x === 'object' && typeof x._bitflags === 'number' }$/;"	f
+isWhitespace	quickshell/utils/scripts/fzf.js	/^const isWhitespace = (rune) => whitespaceRunes.has(rune);$/;"	f
+item	quickshell/utils/scripts/fzf.js	/^			item: this.items[idx],$/;"	p	variable:anonymousObject58072e910405
+item	quickshell/utils/scripts/fzf.js	/^			item: this.items[idx],$/;"	p	variable:anonymousObject58072e910505
+iter	quickshell/utils/scripts/fzf.js	/^function iter(algoFn, tokens, caseSensitive, normalize, forward, pattern, slab2) {$/;"	f
+keysSpacesBestScores	quickshell/utils/scripts/fuzzysort.js	/^var keysSpacesBestScores = []; var allowPartialMatchScores = []$/;"	v
+limit	quickshell/utils/scripts/fzf.js	/^	limit: Infinity,$/;"	p	variable:defaultOpts
+lowerCodes	quickshell/utils/scripts/fuzzysort.js	/^        spaceSearches.push({lowerCodes:_info.lowerCodes, _lower:searches[i].toLowerCase(), conta/;"	p	variable:anonymousObjectbffade1b0205
+makeSlab	quickshell/utils/scripts/fzf.js	/^function makeSlab(size16, size32) {$/;"	f
+matchesSimple	quickshell/utils/scripts/fuzzysort.js	/^var matchesSimple = []; var matchesStrict = []$/;"	v
+matchesStrict	quickshell/utils/scripts/fuzzysort.js	/^var matchesSimple = []; var matchesStrict = []$/;"	v
+maxInt16	quickshell/utils/scripts/fzf.js	/^function maxInt16(num1, num2) {$/;"	f
 monitor	hypr/hyprland.conf	/^monitor=DP-5, 1920x1080@144, 1920x0, 1$/;"	k
 monitor	hypr/hyprland.conf	/^monitor=DP-6, 1920x1080@144, 0x0, 1$/;"	k
+new_result	quickshell/utils/scripts/fuzzysort.js	/^var new_result = (target, options) => {$/;"	f
+nextBeginningIndexesChanges	quickshell/utils/scripts/fuzzysort.js	/^var nextBeginningIndexesChanges = [] \/\/ allows straw berry to match strawberry well, by modify/;"	v
+noResults	quickshell/utils/scripts/fuzzysort.js	/^var noResults = []; noResults.total = 0$/;"	v
+noTarget	quickshell/utils/scripts/fuzzysort.js	/^var noTarget = prepare('')$/;"	v
+normalize	quickshell/utils/scripts/fzf.js	/^				normalize: normalizeTerm$/;"	p	variable:anonymousObject58072e910205
+normalizeRune	quickshell/utils/scripts/fzf.js	/^function normalizeRune(rune) {$/;"	f
+normalizeScore	quickshell/utils/scripts/fuzzysort.js	/^var normalizeScore = score => {$/;"	f
+normalized	quickshell/utils/scripts/fzf.js	/^const normalized = {$/;"	v
+o	quickshell/utils/scripts/fzf.js	/^	o: [7888, 7907],$/;"	p	variable:ranges
+obj	quickshell/utils/scripts/fuzzysort.js	/^        var result = new_result(target.target, {_score: target._score, obj: obj})$/;"	p	variable:all.anonymousObjectbffade1b0305
+parseTerms	quickshell/utils/scripts/fzf.js	/^function parseTerms(fuzzy, caseMode, normalize, str) {$/;"	f
+positions	quickshell/utils/scripts/fzf.js	/^			positions: match.allPos,$/;"	p	variable:anonymousObject58072e910505
+positions	quickshell/utils/scripts/fzf.js	/^			positions: positions != null ? positions : \/* @__PURE__ *\/ new Set()$/;"	p	variable:anonymousObject58072e910405
+postProcessResultItems	quickshell/utils/scripts/fzf.js	/^function postProcessResultItems(result, opts) {$/;"	f
+prefixLength	quickshell/utils/scripts/fzf.js	/^			prefixLength: 0$/;"	p	variable:computeExtendedMatch.anonymousObject58072e910305
+prefixMatch	quickshell/utils/scripts/fzf.js	/^const prefixMatch = (caseSensitive, normalize, forward, text, pattern, withPos, slab2) => {$/;"	f
 preload	hypr/hyprpaper.conf	/^preload = ~\/Pictures\/wallpaper.jpg$/;"	k
+prepare	quickshell/utils/scripts/fuzzysort.js	/^var prepare = (target) => {$/;"	f
+prepareBeginningIndexes	quickshell/utils/scripts/fuzzysort.js	/^var prepareBeginningIndexes = (target) => {$/;"	f
+prepareLowerInfo	quickshell/utils/scripts/fuzzysort.js	/^var prepareLowerInfo = (str) => {$/;"	f
+prepareNextBeginningIndexes	quickshell/utils/scripts/fuzzysort.js	/^var prepareNextBeginningIndexes = (target) => {$/;"	f
+prepareSearch	quickshell/utils/scripts/fuzzysort.js	/^var prepareSearch = (search) => {$/;"	f
+preparedCache	quickshell/utils/scripts/fuzzysort.js	/^var preparedCache       = new Map()$/;"	v
+preparedSearchCache	quickshell/utils/scripts/fuzzysort.js	/^var preparedSearchCache = new Map()$/;"	v
+push_result	quickshell/utils/scripts/fuzzysort.js	/^    function push_result(result) {$/;"	f	function:go
+q	quickshell/utils/scripts/fuzzysort.js	/^var q = fastpriorityqueue() \/\/ reuse this$/;"	v
+ranges	quickshell/utils/scripts/fzf.js	/^const ranges = {$/;"	v
+remove_accents	quickshell/utils/scripts/fuzzysort.js	/^var remove_accents = (str) => str.replace(\/\\p{Script=Latin}+\/gu, match => match.normalize('NF/;"	f
+resetNextBeginningIndexes	quickshell/utils/scripts/fuzzysort.js	/^    var resetNextBeginningIndexes = () => {$/;"	f	function:algorithmSpaces
+result	quickshell/utils/scripts/fzf.js	/^		const result = {$/;"	v	function:fuzzyMatchV2
+runesToStr	quickshell/utils/scripts/fzf.js	/^const runesToStr = (runes) => runes.map((r) => String.fromCodePoint(r)).join("");$/;"	f
+score	quickshell/utils/scripts/fuzzysort.js	/^    get ['score']() { return normalizeScore(this._score) }$/;"	G	class:Result
+score	quickshell/utils/scripts/fuzzysort.js	/^    set ['score'](score) { this._score = denormalizeScore(score) }$/;"	S	class:Result
+score	quickshell/utils/scripts/fzf.js	/^			score: match.totalScore,$/;"	p	variable:anonymousObject58072e910505
+score	quickshell/utils/scripts/fzf.js	/^			score: maxScore$/;"	p	variable:fuzzyMatchV2.result
+single	quickshell/utils/scripts/fuzzysort.js	/^var single =  (search, target) => {$/;"	f
+slab	quickshell/utils/scripts/fzf.js	/^const slab = makeSlab(SLAB_16_SIZE, SLAB_32_SIZE);$/;"	C
+start	quickshell/utils/scripts/fzf.js	/^			start: maxScorePos,$/;"	p	variable:fuzzyMatchV2.result
+start	quickshell/utils/scripts/fzf.js	/^			start: sidx,$/;"	p	variable:anonymousObject58072e910505
+strToRunes	quickshell/utils/scripts/fzf.js	/^const strToRunes = (str) => str.split("").map((s) => s.codePointAt(0));$/;"	f
+suffixMatch	quickshell/utils/scripts/fzf.js	/^const suffixMatch = (caseSensitive, normalize, forward, text, pattern, withPos, slab2) => {$/;"	f
+termTypeMap	quickshell/utils/scripts/fzf.js	/^const termTypeMap = {$/;"	v
+text	quickshell/utils/scripts/fzf.js	/^				text: textRunes,$/;"	p	variable:anonymousObject58072e910205
+text	quickshell/utils/scripts/fzf.js	/^			text,$/;"	p	variable:computeExtendedMatch.anonymousObject58072e910305
+tmpResults	quickshell/utils/scripts/fuzzysort.js	/^var tmpTargets = []; var tmpResults = []$/;"	v
+tmpTargets	quickshell/utils/scripts/fuzzysort.js	/^var tmpTargets = []; var tmpResults = []$/;"	v
+toInt	quickshell/utils/scripts/fzf.js	/^function toInt(number) {$/;"	f
+toShort	quickshell/utils/scripts/fzf.js	/^function toShort(number) {$/;"	f
+trySkip	quickshell/utils/scripts/fzf.js	/^function trySkip(input, caseSensitive, char, from) {$/;"	f
+typ	quickshell/utils/scripts/fzf.js	/^				typ,$/;"	p	variable:anonymousObject58072e910205
+u	quickshell/utils/scripts/fzf.js	/^	u: [7912, 7921]$/;"	p	variable:ranges
+upperChar	quickshell/utils/scripts/fzf.js	/^	const upperChar = lowerChar.toUpperCase();$/;"	C
+v	quickshell/utils/scripts/fuzzysort.js	/^var fastpriorityqueue=r=>{var e=[],o=0,a={},v=r=>{for(var a=0,v=e[a],c=1;c<o;){var s=c+1;a=c,s<o/;"	f	function:fastpriorityqueue
 wallpaper	hypr/hyprpaper.conf	/^wallpaper = DP-5, ~\/Pictures\/wallpaper.jpg$/;"	k
 wallpaper	hypr/hyprpaper.conf	/^wallpaper = DP-6, ~\/Pictures\/wallpaper.jpg$/;"	k
+whitespaceRunes	quickshell/utils/scripts/fzf.js	/^const whitespaceRunes = new Set($/;"	C
+whitespacesAtEnd	quickshell/utils/scripts/fzf.js	/^const whitespacesAtEnd = (runes) => {$/;"	f
+whitespacesAtStart	quickshell/utils/scripts/fzf.js	/^const whitespacesAtStart = (runes) => {$/;"	f
 window	wofi/style.css	/^window {$/;"	s
 windowrule	hypr/hyprland.conf	/^windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0$/;"	k
 windowrule	hypr/hyprland.conf	/^windowrule = suppressevent maximize, class:.*$/;"	k
+withDiacritic	quickshell/utils/scripts/fzf.js	/^		const withDiacritic = (asciiChar + diacritic).normalize();$/;"	C
+withDiacriticCodePoint	quickshell/utils/scripts/fzf.js	/^		const withDiacriticCodePoint = withDiacritic.codePointAt(0);$/;"	C
 workspace	hypr/hyprland.conf	/^workspace = 1, monitor:DP-5$/;"	k
 workspace	hypr/hyprland.conf	/^workspace = 10, monitor:DP-6$/;"	k
 workspace	hypr/hyprland.conf	/^workspace = 2, monitor:DP-6$/;"	k

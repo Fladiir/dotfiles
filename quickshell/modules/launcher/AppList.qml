@@ -7,6 +7,7 @@ import QtQuick.Controls
 
 import qs.config
 import qs.widgets
+import qs.utils
 
 Item
 {
@@ -55,7 +56,8 @@ Item
 				barWidth: 500
 				onTextEdited:
 				{
-					root.apps = DesktopEntries.applications.values.filter(a => a.name.includes(input.text));
+					//root.apps = DesktopEntries.applications.values.filter(a => a.name.includes(input.text));
+					root.apps = AppsSearcher.query(input.text);
 				}
 
 				Keys.onPressed: event => {
@@ -155,6 +157,53 @@ Item
 				}
 
 			}
+
+			add: Transition {
+				Anim {
+					properties: "opacity,scale"
+					from: 0
+					to: 1
+				}
+			}
+
+			remove: Transition {
+				Anim {
+					properties: "opacity,scale"
+					from: 1
+					to: 0
+				}
+			}
+
+			move: Transition {
+				Anim {
+					property: "y"
+				}
+				Anim {
+					properties: "opacity,scale"
+					to: 1
+				}
+			}
+
+			addDisplaced: Transition {
+				Anim {
+					property: "y"
+					duration: Appearance.anim.durations.small
+				}
+				Anim {
+					properties: "opacity,scale"
+					to: 1
+				}
+			}
+
+			displaced: Transition {
+				Anim {
+					property: "y"
+				}
+				Anim {
+					properties: "opacity,scale"
+					to: 1
+				}
+			}
 		}
 	}
 
@@ -176,5 +225,9 @@ Item
 		}
 	}
 
-
+	component Anim: NumberAnimation {
+		duration: Appearance.anim.durations.normal
+		easing.type: Easing.BezierSpline
+		easing.bezierCurve: Appearance.anim.curves.standard
+	}
 }
