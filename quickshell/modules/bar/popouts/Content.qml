@@ -10,7 +10,7 @@ Item
 	property real currentCenter
 	readonly property Item contentma: contentma
 
-	implicitWidth: hasCurrent ? ( content.children.find(c => c.shouldBeActive)?.implicitWidth ?? content.implicitWidth ) + 50 : 0
+	implicitWidth: ( content.children.find(c => c.shouldBeActive)?.implicitWidth ?? content.implicitWidth ) + 50
 	implicitHeight: hasCurrent ? ( content.children.find(c => c.shouldBeActive)?.implicitHeight ?? content.implicitHeight ) + 40 : 0
 	
 	Item

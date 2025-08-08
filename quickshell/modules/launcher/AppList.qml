@@ -19,15 +19,17 @@ Item
 
 
 	implicitWidth: input.implicitWidth
-	implicitHeight: parent.height
+	implicitHeight: col.implicitHeight
 
 
 	Column
 	{
+		id: col
 
 		WrapperItem
 		{
-			anchors.horizontalCenter: parent.horizontalCenter
+			//anchors.horizontalCenter: parent.horizontalCenter
+			topMargin: 20
 			bottomMargin: 20
 			leftMargin: 10
 
@@ -88,8 +90,9 @@ Item
 			id: listView
 			model: root.apps
 			width: input.implicitWidth
-			height: root.implicitHeight - input.height - 40
-			anchors.horizontalCenter: parent.horizontalCenter
+			//height: root.implicitHeight - input.height - 40
+			height: 200
+			//anchors.horizontalCenter: parent.horizontalCenter
 			activeFocusOnTab: true
 
 

@@ -19,8 +19,8 @@ Item
 	property list<DesktopEntry> apps: DesktopEntries.applications.values
 	property string currentState: "apps"
 
-	implicitHeight: visibilities.launcher ? content.height + PanelsConf.launcher.paddingV : 0
-	implicitWidth: visibilities.launcher ? apps.width + 2 * PanelsConf.launcher.paddingH : 0
+	implicitHeight: visibilities.launcher ? apps.implicitHeight + 2 * PanelsConf.launcher.paddingV : 0
+	implicitWidth: apps.implicitWidth + 2 * PanelsConf.launcher.paddingH
 
 	MouseArea
 	{
@@ -36,25 +36,15 @@ Item
 		}
 	}
 
-	Column
+	AppList
 	{
-		id: content
-		visible: root.visibilities.launcher
-		topPadding: PanelsConf.launcher.paddingV
-		height: 300
-		width: apps.implicitWidth + 2 * PanelsConf.launcher.paddingH
-		layer.enabled: true
-
-		AppList
-		{
-			id: apps
-			visibilities: root.visibilities
-			anchors.horizontalCenter: parent.horizontalCenter
-		}
+		id: apps
+		visibilities: root.visibilities
+		anchors.horizontalCenter: parent.horizontalCenter
 	}
 
-	property int animLength: Appearance.anim.durations.normal
-	property list<real> animCurve: Appearance.anim.curves.emphasized
+	property int animLength: Appearance.anim.durations.large
+	property list<real> animCurve: Appearance.anim.curves.emphasizedDecel
 
 	Behavior on x
 	{
@@ -62,10 +52,10 @@ Item
 		Anim {}
 	}
 
-	Behavior on y
-	{
-		Anim {}
-	}
+	//Behavior on y
+	//{
+	//	Anim {}
+	//}
 
 	Behavior on implicitWidth 
 	{
