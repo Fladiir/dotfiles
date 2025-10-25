@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+depend() {
+	need net 
+}
+
+name="Nextcloud"
+description="Nextcloud client"
+command="/usr/bin/nextcloudcmd"
+command_args="nextcloudcmd -u <User> -p <Password> <URL>"
+procname="nextcloudcmd"
