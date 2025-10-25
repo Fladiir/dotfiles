@@ -368,9 +368,18 @@ animations {
     // slowdown 3.0
 }
 
+workspace "spotify" {
+	open-on-output "DP-6"
+}
+
 workspace "browser" {
 	open-on-output "DP-6"
 }
+
+workspace "discord" {
+	open-on-output "DP-6"
+}
+
 
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
@@ -389,9 +398,25 @@ window-rule {
 }
 
 window-rule {
-	match app-id="steam"
-	exclude title="Steam"
+	match app-id="discord.*"
+	open-on-workspace "discord"
+	open-maximized true
+}
+
+window-rule {
+	match app-id="Spotify.*"
+	open-on-workspace "spotify"
+	open-maximized true
+}
+
+window-rule {
+	match app-id="steam" title="Friends List"
 	open-floating true
+
+	min-height 600
+	min-width 300
+	max-height 600
+	max-width 300
 }
 
 layer-rule {
@@ -724,4 +749,11 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+		
+		Mod+F1 { focus-workspace "discord"; }
+		Mod+Shift+F1 { move-column-to-workspace "discord"; }
+		Mod+F2 { focus-workspace "browser"; }
+		Mod+Shift+F2 { move-column-to-workspace "browser"; }
+		Mod+F3 { focus-workspace "spotify"; }
+		Mod+Shift+F3 { move-column-to-workspace "spotify"; }
 }
