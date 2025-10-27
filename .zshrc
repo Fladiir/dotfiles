@@ -16,6 +16,9 @@ SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
 #
 
+export XDG_CONFIG_HOME="$HOME/.config"
+export PATH=$PATH:/opt/Discord:/opt/clangd
+
 if tty -s; then
 	if [[ $(tty) == "/dev/tty1" ]]; then
 		# dbus-run-session Hyprland
