@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Discord
+Exec=/opt/Discord/Discord
+Terminal=false
+Type=Application
+Icon=/opt/Discord/discord.png
+StartupWMClass=discord
+Comment=Discord
