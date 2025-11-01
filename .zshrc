@@ -18,6 +18,7 @@ SAVEHIST=1000
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH=$PATH:/opt/Discord:/opt/clangd
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus"
 
 if tty -s; then
 	if [[ $(tty) == "/dev/tty1" ]]; then

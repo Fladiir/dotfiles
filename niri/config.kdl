@@ -69,13 +69,18 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
+environment {
+	//DBUS_SESSION_BUS_ADDRESS "UNIX:PATH=$XDG_RUNTIME_DIR/bus"
+	DBUS_SESSION_BUS_ADDRESS null
+}
+
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-output "DP-6" { //LG Electronics LG ULTRAGEAR 
+output "eDP-1" { 
     // Uncomment this line to disable this output.
     // off
 
@@ -85,7 +90,7 @@ output "DP-6" { //LG Electronics LG ULTRAGEAR
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1920x1080@143.981"
+    mode "2560x1600@60.001"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 1
@@ -106,7 +111,7 @@ output "DP-6" { //LG Electronics LG ULTRAGEAR
     position x=0 y=0
 }
 
-output "DP-5" { //ASUSTek COMPUTER INC VG279
+/-output "DP-5" { //ASUSTek COMPUTER INC VG279
     // Uncomment this line to disable this output.
     // off
 
@@ -340,7 +345,6 @@ spawn-sh-at-startup "hyprpaper &"
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
     skip-at-startup
-}
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -369,15 +373,19 @@ animations {
 }
 
 workspace "spotify" {
-	open-on-output "DP-6"
+	open-on-output "eDP-1"
 }
 
 workspace "browser" {
-	open-on-output "DP-6"
+	open-on-output "eDP-1"
 }
 
 workspace "discord" {
-	open-on-output "DP-6"
+	open-on-output "eDP-1"
+}
+
+workspace "teams" {
+	open-on-output "eDP-1"
 }
 
 
@@ -406,6 +414,12 @@ window-rule {
 window-rule {
 	match app-id="Spotify.*"
 	open-on-workspace "spotify"
+	open-maximized true
+}
+
+window-rule {
+	match app-id="teams-for-linux.*"
+	open-on-workspace "teams"
 	open-maximized true
 }
 
@@ -500,7 +514,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "fuzzel"; }
     Super+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "hyprlock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -750,10 +764,12 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 		
-		Mod+F1 { focus-workspace "discord"; }
-		Mod+Shift+F1 { move-column-to-workspace "discord"; }
-		Mod+F2 { focus-workspace "browser"; }
-		Mod+Shift+F2 { move-column-to-workspace "browser"; }
-		Mod+F3 { focus-workspace "spotify"; }
-		Mod+Shift+F3 { move-column-to-workspace "spotify"; }
+	Mod+F1 { focus-workspace "discord"; }
+	Mod+Shift+F1 { move-column-to-workspace "discord"; }
+	Mod+F2 { focus-workspace "browser"; }
+	Mod+Shift+F2 { move-column-to-workspace "browser"; }
+	Mod+F3 { focus-workspace "teams"; }
+	Mod+Shift+F3 { move-column-to-workspace "teams"; }
+	Mod+F4 { focus-workspace "spotify"; }
+	Mod+Shift+F4 { move-column-to-workspace "spotify"; }
 }
