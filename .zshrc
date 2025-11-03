@@ -19,6 +19,7 @@ SAVEHIST=1000
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH=$PATH:/opt/Discord:/opt/clangd
 export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus"
+export TERM=xterm-256color
 
 if tty -s; then
 	if [[ $(tty) == "/dev/tty1" ]]; then
@@ -42,6 +43,6 @@ function git_branch_name()
 setopt prompt_subst
 
 
-PROMPT='[%(?.%F{14}⏺.%F{9}⏺)%f] %F{3}%n%f %2~ %F{3}>%f '
+PROMPT='%F{3}%n%f %2~ %F{3}>%f '
 RPROMPT='$(git_branch_name)'
 alias ls='ls --color' 
